@@ -13,8 +13,8 @@ module ApplicationHelper
       left_part = content_tag :div, nil do
         concat link_to "CoreUI", "https://coreui.io"
         concat " "
-        concat link_to "Rails Starter Template", "https://git.thape.com.cn/Eric-Guo/coreui-pro-rails-starter"
-        concat "  © 2023 Eric-Guo."
+        concat link_to "High Five", "https://git.thape.com.cn/rails/high-five"
+        concat "  © 2024 Eric-Guo."
       end
       right_part = content_tag :div, nil, class: "ms-auto" do
         concat "Powered by "

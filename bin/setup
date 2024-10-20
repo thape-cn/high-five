@@ -2,7 +2,7 @@
 require "fileutils"
 
 APP_ROOT = File.expand_path("..", __dir__)
-APP_NAME = "coreui-pro-rails-starter"
+APP_NAME = "high-five"
 
 def system!(*args)
   system(*args, exception: true)

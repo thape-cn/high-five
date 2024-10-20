@@ -1,6 +1,6 @@
 # The CoreUI 4 Rails Starter Template
 
-[![Build Status](https://github.com/Eric-Guo/coreui4-rails-starter/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/Eric-Guo/coreui4-rails-starter/actions)
+[![Build Status](https://github.com/thape-cn/high-five/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/thape-cn/high-five/actions)
 
 ## Development notes
 

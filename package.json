@@ -1,5 +1,5 @@
 {
-  "name": "rails-starter",
+  "name": "high-five",
   "private": true,
   "scripts": {
     "postinstall": "patch-package"
