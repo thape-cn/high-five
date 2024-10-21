@@ -24,6 +24,7 @@ gem "jbuilder"
 # gem "kredis"
 
 gem "devise"
+gem "omniauth_openid_connect"
 gem "devise-i18n"
 gem "pundit"
 
