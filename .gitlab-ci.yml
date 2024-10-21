@@ -1,8 +1,15 @@
 ---
 image: "ruby:3.1"
 
+services:
+  - postgres
+
 variables:
   RAILS_ENV: test
+  POSTGRES_DB: highfive_test
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: "password"
+  DATABASE_URL: "postgresql://postgres:password@postgres:5432/highfive_test"
   CACHE_FALLBACK_KEY: "$CI_COMMIT_REF_SLUG"
 
 before_script:

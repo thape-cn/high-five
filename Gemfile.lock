@@ -202,6 +202,7 @@ GEM
     parser (3.3.5.0)
       ast (~> 2.4.1)
       racc
+    pg (1.5.8)
     prism (1.2.0)
     propshaft (1.1.0)
       actionpack (>= 7.0.0)
@@ -307,12 +308,6 @@ GEM
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
     sorbet-runtime (0.5.11609)
-    sqlite3 (2.1.0-aarch64-linux-gnu)
-    sqlite3 (2.1.0-arm-linux-gnu)
-    sqlite3 (2.1.0-arm64-darwin)
-    sqlite3 (2.1.0-x86-linux-gnu)
-    sqlite3 (2.1.0-x86_64-darwin)
-    sqlite3 (2.1.0-x86_64-linux-gnu)
     sshkit (1.23.2)
       base64
       net-scp (>= 1.1.2)
@@ -380,6 +375,7 @@ DEPENDENCIES
   jbuilder
   meta-tags
   pagy
+  pg
   propshaft
   puma
   pundit
@@ -388,7 +384,6 @@ DEPENDENCIES
   ruby-lsp-rails
   selenium-webdriver (>= 4.25.0)
   shakapacker (~> 8.0)
-  sqlite3
   standard
   tzinfo-data
   web-console
