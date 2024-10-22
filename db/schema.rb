@@ -14,10 +14,36 @@ ActiveRecord::Schema[7.2].define(version: 2023_08_03_034248) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "job_roles", force: :cascade do |t|
+    t.string "st_code"
+    t.integer "job_level"
+    t.string "job_code"
+    t.string "job_family"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "role_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_job_roles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "job_role_id", null: false
+    t.bigint "manager_user_id"
+    t.string "company"
+    t.string "department"
+    t.string "dept_code"
+    t.string "title"
+    t.string "job_user_id"
+    t.boolean "is_active", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_role_id"], name: "index_user_job_roles_on_job_role_id"
+    t.index ["manager_user_id"], name: "index_user_job_roles_on_manager_user_id"
+    t.index ["user_id"], name: "index_user_job_roles_on_user_id"
   end
 
   create_table "user_roles", force: :cascade do |t|
@@ -44,11 +70,17 @@ ActiveRecord::Schema[7.2].define(version: 2023_08_03_034248) do
     t.datetime "updated_at", null: false
     t.string "preferred_language"
     t.integer "preferred_page_length", default: 10, null: false
+    t.string "chinese_name", null: false
+    t.date "hire_date", null: false
+    t.string "clerk_code", null: false
+    t.boolean "is_active", default: false, null: false
     t.boolean "sidebar_narrow", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "user_job_roles", "job_roles"
+  add_foreign_key "user_job_roles", "users"
   add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"
 end

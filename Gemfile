@@ -5,7 +5,7 @@ ruby "~> 3.1"
 
 # bundle config local.rails /Users/guochunzhong/git/oss/rails
 gem "rails", "~> 7.2.1"
-
+gem "csv"
 gem "propshaft"
 
 gem "pg"

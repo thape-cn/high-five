@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :user_roles, dependent: :destroy
   has_many :roles, through: :user_roles
+  has_many :user_job_roles, dependent: :destroy
+  has_many :job_roles, through: :user_job_roles
 
   normalizes :email, with: ->(email) { email.downcase.strip }
 
@@ -36,5 +38,10 @@ class User < ApplicationRecord
   # default options of datatables: https://datatables.net/reference/option/lengthMenu
   def self.length_menu_options
     [10, 25, 50, 100]
+  end
+
+  def self.user_ids_need_to_skip
+    @_user_ids_need_to_skip ||= where("email like 'hftest%@thape.com.cn'")
+      .pluck(:id)
   end
 end

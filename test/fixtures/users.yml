@@ -6,6 +6,12 @@
 #
 user_guochunzhong:
   email: guochunzhong@thape.com.cn
+  chinese_name: "过纯中"
+  hire_date: "2019-03-04"
+  clerk_code: "015454"
 
 user_fangzixue:
   email: fangzixue@thape.com.cn
+  chinese_name: "方子雪"
+  hire_date: "2018-07-23"
+  clerk_code: "013771"
