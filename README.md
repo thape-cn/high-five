@@ -1,6 +1,16 @@
-# The CoreUI 4 Rails Starter Template
+# High Five 🙌
 
 [![Build Status](https://github.com/thape-cn/high-five/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/thape-cn/high-five/actions)
+
+## How to import DB
+
+```bash
+psql -d postgres
+DROP DATABASE highfive_development;
+CREATE DATABASE highfive_development WITH ENCODING='UTF8';
+\q
+psql -d highfive_development -f high_five_prod_db.sql
+```
 
 ## Development notes
 
