@@ -3,6 +3,7 @@ en:
   user:
     users: "User"
     account: "Account"
+    active_user: "Active user"
     email: "Email"
     admin: "Admin"
     change_my_password: "Change my password"

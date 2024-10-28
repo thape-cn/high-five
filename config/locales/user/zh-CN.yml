@@ -3,6 +3,7 @@ zh-CN:
   user:
     users: "用户"
     account: "账户"
+    active_user: "有效用户"
     email: "电子邮件"
     admin: "管理员"
     change_my_password: "更改我的密码"
