@@ -15,11 +15,11 @@
               <div><%= t('user.active_user') -%></div>
             </div>
           </div>
-          <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;" data-controller="dashboard"
-            data-dashboard-title-value='My First dataset'
-            data-dashboard-labels-value='["January", "February", "March", "April", "May", "June", "July"]'
-            data-dashboard-data-value='[65, 59, 84, 84, 51, 55, 40]'>
-            <canvas class="chart" height="70" data-dashboard-target="cardChart"></canvas>
+          <div class="c-chart-wrapper mt-3 mx-3" style="height:100px;" data-controller="dashboard"
+            data-dashboard-title-value='人数'
+            data-dashboard-labels-value='<%= @job_family_data.keys.to_json.html_safe -%>'
+            data-dashboard-data-value='<%= @job_family_data.values.to_json.html_safe -%>'>
+            <canvas class="chart" height="100" data-dashboard-target="cardChart"></canvas>
           </div>
         </div>
       </div>

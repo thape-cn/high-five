@@ -18,8 +18,6 @@ const options = {
         }
       },
       y: {
-        min: 30,
-        max: 89,
         display: false,
         grid: {
           display: false
@@ -51,6 +49,7 @@ Stimulus.register("dashboard", class extends Controller {
   }
 
   connect() {
+    console.log(this.labelsValue, this.dataValue);
     this.cardChart = new Chart(this.cardChartTarget, {
       type: 'line',
       data: {
