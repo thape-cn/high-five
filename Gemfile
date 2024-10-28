@@ -29,7 +29,10 @@ gem "devise-i18n"
 gem "pundit"
 
 gem "meta-tags"
-gem "browser"
+
+# Pin version to support Ruby 3.1
+gem "browser", "< 6"
+gem "zeitwerk", "~> 2.6.18"
 
 gem "config"
 
