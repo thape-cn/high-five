@@ -17,8 +17,8 @@
           </div>
           <div class="c-chart-wrapper mt-3 mx-3" style="height:100px;" data-controller="dashboard"
             data-dashboard-title-value='人数'
-            data-dashboard-labels-value='<%= @job_family_data.keys.to_json.html_safe -%>'
-            data-dashboard-data-value='<%= @job_family_data.values.to_json.html_safe -%>'>
+            data-dashboard-labels-value='<%= @job_family_data.collect(&:first).to_json.html_safe -%>'
+            data-dashboard-data-value='<%= @job_family_data.collect(&:second).to_json.html_safe -%>'>
             <canvas class="chart" height="100" data-dashboard-target="cardChart"></canvas>
           </div>
         </div>

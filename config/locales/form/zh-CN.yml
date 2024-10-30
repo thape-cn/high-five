@@ -9,3 +9,4 @@ zh-CN:
     confirm: "确认"
     reset: "重置"
     close: "关闭"
+    excel_report: "导出 Excel 报表"

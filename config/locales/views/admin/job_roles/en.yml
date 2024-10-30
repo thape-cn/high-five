@@ -1,0 +1,8 @@
+---
+en:
+  admin:
+    job_roles:
+      index:
+        title: "Job roles"
+      edit:
+        title: "Edit job role: %{st_code}"

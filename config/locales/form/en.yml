@@ -9,3 +9,4 @@ en:
     confirm: "Confirm"
     reset: "Reset"
     close: "Close"
+    excel_report: "Export Excel report"
