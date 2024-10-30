@@ -3,6 +3,7 @@ en:
   user:
     users: "User"
     account: "Account"
+    clerk_code: "Clerk code"
     active_user: "Active user"
     email: "Email"
     admin: "Admin"
@@ -29,3 +30,5 @@ en:
     resend_unlock_instructions: "Resend unlock instructions"
     resend_confirmation: "Resend confirmation ?"
     resend_confirmation_instructions: "Resend confirmation instructions"
+    chinese_name: "Chinese name"
+    job_role: "Job role"
