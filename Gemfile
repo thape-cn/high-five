@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "~> 3.1"
+ruby "~> 3.2"
 
 # bundle config local.rails /Users/guochunzhong/git/oss/rails
 gem "rails", "~> 7.2.1"
@@ -30,9 +30,8 @@ gem "pundit"
 
 gem "meta-tags"
 
-# Pin version to support Ruby 3.1
-gem "browser", "< 6"
-gem "zeitwerk", "~> 2.6.18"
+gem "browser"
+gem "zeitwerk"
 
 gem "config"
 
