@@ -4,5 +4,5 @@ en:
     sidebars:
       admin:
         header: "Home"
-        dashboard: "Dashboard"
+        dashboard: "Admin dashboard"
         account: "Account"

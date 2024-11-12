@@ -4,5 +4,5 @@ en:
     sidebars:
       application:
         header: "Home"
-        dashboard: "Dashboard"
+        my_team: "My team"
         account: "Account"

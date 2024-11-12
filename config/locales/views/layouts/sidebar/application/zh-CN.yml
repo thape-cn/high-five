@@ -4,5 +4,5 @@ zh-CN:
     sidebars:
       application:
         header: "首页"
-        dashboard: "仪表板"
+        my_team: "我的团队"
         account: "账号"

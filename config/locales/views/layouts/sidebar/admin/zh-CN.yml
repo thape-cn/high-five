@@ -4,5 +4,5 @@ zh-CN:
     sidebars:
       admin:
         header: "首页"
-        dashboard: "仪表板"
+        dashboard: "管理员仪表板"
         account: "账号"
