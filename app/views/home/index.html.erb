@@ -1,3 +1,18 @@
 <% content_for :head do %>
   <%= append_javascript_pack_tag 'stimulus' %>
 <% end %>
+
+<section class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <% if current_user.user_job_roles.any? %>
+        <% current_user.user_job_roles.each do |role| %>
+          <h4><%= role.title %> <small class="text-muted float-end"><%= role.company %></small></h4>
+
+        <% end %>
+      <% else %>
+        <p class="text-muted">No job roles found.</p>
+      <% end %>
+    </div>
+  </div>
+</section>
