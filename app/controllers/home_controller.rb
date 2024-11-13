@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   before_action :set_breadcrumbs, if: -> { request.format.html? }
 
   def index
+    @first_level_user_job_roles = current_user&.user_job_roles
     redirect_to admin_root_path if current_user&.admin?
   end
 
