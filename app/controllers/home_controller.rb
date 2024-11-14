@@ -5,12 +5,8 @@ class HomeController < ApplicationController
 
   def index
     @first_level_user_job_roles = current_user&.user_job_roles || []
-    @second_level_user_job_roles = []
-
-    @first_level_user_job_roles.each do |ujr|
-      ujr.managed_user_job_roles.each do |second_ujr|
-        @second_level_user_job_roles << second_ujr if second_ujr.managed_user_job_roles.present?
-      end
+    @second_level_user_job_roles = @first_level_user_job_roles.flat_map do |user_job_role|
+      user_job_role.managed_user_job_roles.select(&:managed_user_job_roles)
     end
   end
 
