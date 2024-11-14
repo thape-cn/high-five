@@ -1,13 +1,13 @@
 <% user_job_roles.each do |role| %>
-  <h4><%= role.title %> <small class="text-muted float-end"><%= role.company %></small></h4>
+  <h4><%= role.user.chinese_name -%> <small class="text-muted"><%= role.title %></small> <small class="text-muted float-end"><%= role.company %></small></h4>
   <div class="row">
-    <% role.managed_user_job_roles.each do |role| %>
+    <% role.managed_user_job_roles.each do |managed_role| %>
       <div class="col-3">
         <div class="card my-3">
           <div class="card-body">
             <div class="text-center">
-              <div><%= role.user.chinese_name %></div>
-              <small class="text-muted"><%= role.title %></small>
+              <div><%= managed_role.user.chinese_name %></div>
+              <small class="text-muted"><%= managed_role.title %></small>
             </div>
           </div>
         </div>
