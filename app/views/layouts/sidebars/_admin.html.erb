@@ -13,7 +13,10 @@
     <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable" data-action="click->sidebar#click"></button>
   </div>
   <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
-    <%= nav_item(t('.dashboard'), root_path, 'free.svg#cil-speedometer') do %>
+    <%= nav_item(t('.dashboard'), admin_root_path, 'free.svg#cil-speedometer') do %>
+      <span class="badge bg-primary ms-auto">NEW</span>
+    <% end %>
+    <%= nav_item(t('.my_team'), root_path, 'free.svg#cil-speedometer') do %>
       <span class="badge bg-primary ms-auto">NEW</span>
     <% end %>
 

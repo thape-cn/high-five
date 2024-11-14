@@ -5,4 +5,5 @@ en:
       admin:
         header: "Home"
         dashboard: "Admin dashboard"
+        my_team: "My team"
         account: "Account"

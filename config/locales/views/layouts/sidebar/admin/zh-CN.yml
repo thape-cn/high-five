@@ -5,4 +5,5 @@ zh-CN:
       admin:
         header: "首页"
         dashboard: "管理员仪表板"
+        my_team: "我的团队"
         account: "账号"
