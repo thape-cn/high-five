@@ -7,7 +7,10 @@ class HomeController < ApplicationController
     @first_level_user_job_roles = current_user&.user_job_roles || []
     @second_level_user_job_roles = @first_level_user_job_roles.flat_map do |user_job_role|
       user_job_role.managed_user_job_roles.select(&:managed_user_job_roles)
-    end
+    end.reject { |ujr| ujr.managed_user_job_roles.blank? }
+    @third_level_user_job_roles = @second_level_user_job_roles.flat_map do |user_job_role|
+      user_job_role.managed_user_job_roles.select(&:managed_user_job_roles)
+    end.reject { |ujr| ujr.managed_user_job_roles.blank? }
   end
 
   protected

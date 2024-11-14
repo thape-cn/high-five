@@ -23,3 +23,13 @@
     </div>
   </section>
 <% end %>
+
+<% if @third_level_user_job_roles.present? %>
+  <section class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <%= render partial: 'user_job_roles', locals: { user_job_roles: @third_level_user_job_roles } %>
+      </div>
+    </div>
+  </section>
+<% end %>
