@@ -1,0 +1,12 @@
+---
+uge_one:
+  user: user_guochunzhong
+  good_event: good_one
+
+uge_two:
+  user: user_fangzixue
+  good_event: good_one
+
+uge_three:
+  user: user_fangzixue
+  good_event: great_two

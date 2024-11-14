@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2023_08_03_034248) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_14_085722) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
+
+  create_table "bad_events", force: :cascade do |t|
+    t.string "bad_title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "good_events", force: :cascade do |t|
+    t.string "good_title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "job_roles", force: :cascade do |t|
     t.string "st_code"
@@ -27,6 +39,24 @@ ActiveRecord::Schema[7.2].define(version: 2023_08_03_034248) do
     t.string "role_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_bad_events", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "bad_event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bad_event_id"], name: "index_user_bad_events_on_bad_event_id"
+    t.index ["user_id"], name: "index_user_bad_events_on_user_id"
+  end
+
+  create_table "user_good_events", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "good_event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["good_event_id"], name: "index_user_good_events_on_good_event_id"
+    t.index ["user_id"], name: "index_user_good_events_on_user_id"
   end
 
   create_table "user_job_roles", force: :cascade do |t|
@@ -79,6 +109,10 @@ ActiveRecord::Schema[7.2].define(version: 2023_08_03_034248) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "user_bad_events", "bad_events"
+  add_foreign_key "user_bad_events", "users"
+  add_foreign_key "user_good_events", "good_events"
+  add_foreign_key "user_good_events", "users"
   add_foreign_key "user_job_roles", "job_roles"
   add_foreign_key "user_job_roles", "users"
   add_foreign_key "user_roles", "roles"

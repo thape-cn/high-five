@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :roles, through: :user_roles
   has_many :user_job_roles, dependent: :destroy
   has_many :job_roles, through: :user_job_roles
+  has_many :user_good_events, dependent: :destroy
+  has_many :good_events, through: :user_good_events
+  has_many :user_bad_events, dependent: :destroy
+  has_many :bad_events, through: :user_bad_events
 
   normalizes :email, with: ->(email) { email.downcase.strip }
 
