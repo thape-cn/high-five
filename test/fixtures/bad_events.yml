@@ -1,6 +1,8 @@
 ---
 bad_one:
   bad_title: "Bad things title"
+  users_count: 1
 
 worse_two:
   bad_title: "Worse things title"
+  users_count: 2

@@ -9,9 +9,9 @@ class User < ApplicationRecord
   has_many :user_job_roles, dependent: :destroy
   has_many :job_roles, through: :user_job_roles
   has_many :user_good_events, dependent: :destroy
-  has_many :good_events, through: :user_good_events
+  has_many :good_events, through: :user_good_events, counter_cache: true
   has_many :user_bad_events, dependent: :destroy
-  has_many :bad_events, through: :user_bad_events
+  has_many :bad_events, through: :user_bad_events, counter_cache: true
 
   normalizes :email, with: ->(email) { email.downcase.strip }
 

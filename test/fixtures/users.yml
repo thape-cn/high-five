@@ -9,9 +9,13 @@ user_guochunzhong:
   chinese_name: "过纯中"
   hire_date: "2019-03-04"
   clerk_code: "015454"
+  bad_events_count: 2
+  good_events_count: 1
 
 user_fangzixue:
   email: fangzixue@thape.com.cn
   chinese_name: "方子雪"
   hire_date: "2018-07-23"
   clerk_code: "013771"
+  bad_events_count: 1
+  good_events_count: 2

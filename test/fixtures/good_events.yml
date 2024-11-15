@@ -1,6 +1,8 @@
 ---
 good_one:
   good_title: "Good things title"
+  users_count: 2
 
 great_two:
   good_title: "Great things title"
+  users_count: 1

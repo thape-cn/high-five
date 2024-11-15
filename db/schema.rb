@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_14_085722) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_15_082525) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -18,12 +18,14 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_14_085722) do
     t.string "bad_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "users_count", default: 0, null: false
   end
 
   create_table "good_events", force: :cascade do |t|
     t.string "good_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "users_count", default: 0, null: false
   end
 
   create_table "job_roles", force: :cascade do |t|
@@ -105,6 +107,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_14_085722) do
     t.string "clerk_code", null: false
     t.boolean "is_active", default: false, null: false
     t.boolean "sidebar_narrow", default: false, null: false
+    t.integer "good_events_count", default: 0, null: false
+    t.integer "bad_events_count", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
