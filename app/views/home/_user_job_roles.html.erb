@@ -1,12 +1,22 @@
 <% user_job_roles.each do |role| %>
-  <h4><%= role.user.chinese_name -%> <small class="text-muted"><%= role.title %></small> <small class="text-muted float-end"><%= role.company %></small></h4>
+  <h4>
+    <span class="float-start"><%= role.user.chinese_name -%></span>
+    &nbsp;
+    <small class="text-muted"><%= role.title %></small>
+    <small class="text-muted float-end"><%= role.company %></small>
+  </h4>
   <div class="row">
     <% role.managed_user_job_roles.each do |managed_role| %>
+      <% user = managed_role.user %>
       <div class="col-3">
-        <div class="card my-3">
-          <div class="card-body">
+        <div class="card bg-transparent my-3">
+          <div class="card-header">
+            <span class="badge rounded-pill text-bg-success float-start"><%= user.good_events_count -%></span>
+            <span class="badge rounded-pill text-bg-danger float-end"><%= user.bad_events_count -%></span>
+          </div>
+          <div class="card-body bg-white">
             <div class="text-center">
-              <div><%= managed_role.user.chinese_name %></div>
+              <div><%= user.chinese_name %></div>
               <small class="text-muted"><%= managed_role.title %></small>
             </div>
           </div>
