@@ -9,13 +9,11 @@
     <% role.managed_user_job_roles.each do |managed_role| %>
       <% user = managed_role.user %>
       <div class="col-3">
-        <div class="card bg-transparent my-3">
-          <div class="card-header">
-            <span class="badge rounded-pill text-bg-success float-start"><%= user.good_events_count -%></span>
-            <span class="badge rounded-pill text-bg-danger float-end"><%= user.bad_events_count -%></span>
-          </div>
-          <div class="card-body bg-white">
-            <div class="text-center">
+        <div class="card my-3">
+          <div class="card-body">
+            <span class="badge rounded-pill text-bg-success float-end"><%= user.good_events_count -%></span>
+            <span class="badge rounded-pill text-bg-danger float-end mx-1"><%= user.bad_events_count -%></span>
+            <div class="text-left">
               <div><%= user.chinese_name %></div>
               <small class="text-muted"><%= managed_role.title %></small>
             </div>
