@@ -1,0 +1,6 @@
+---
+en:
+  activerecord:
+    attributes:
+      good_event:
+        good_title: "Good things"

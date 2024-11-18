@@ -16,6 +16,17 @@
             <div class="text-left">
               <div><%= user.chinese_name %></div>
               <small class="text-muted"><%= managed_role.title %></small>
+              <div class="btn-group-vertical float-end" role="group" aria-label="Vertical button group">
+                <div class="btn-group btn-group-sm" role="group">
+                  <button id="btnGroupVerticalDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-coreui-toggle="dropdown" aria-expanded="false">
+                    <%= t('form.write') -%>
+                  </button>
+                  <ul class="dropdown-menu" style="min-width: 76px;" aria-labelledby="btnGroupVerticalDrop1">
+                    <li><a class="dropdown-item" href="#"><%= GoodEvent.human_attribute_name(:good_title) -%></a></li>
+                    <li><a class="dropdown-item" href="#"><%= BadEvent.human_attribute_name(:bad_title) -%></a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,6 @@
+---
+zh-CN:
+  activerecord:
+    attributes:
+      good_event:
+        good_title: "好事"

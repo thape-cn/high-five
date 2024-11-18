@@ -8,5 +8,6 @@ en:
     update: "Update"
     confirm: "Confirm"
     reset: "Reset"
+    write: "Write"
     close: "Close"
     excel_report: "Export Excel report"

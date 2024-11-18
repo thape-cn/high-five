@@ -1,0 +1,6 @@
+---
+zh-CN:
+  activerecord:
+    attributes:
+      bad_event:
+        bad_title: "坏事"
