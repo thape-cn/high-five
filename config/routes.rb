@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   namespace :account, module: "accounts" do
     resource :profile, only: %i[show update]
   end
+  resource :good_events, only: %i[new create]
+  resource :bad_events, only: %i[new create]
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
