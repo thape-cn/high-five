@@ -166,7 +166,7 @@ GEM
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.8.2)
+    json (2.9.0)
     json-jwt (1.16.7)
       activesupport (>= 4.2)
       aes_key_wrap
@@ -190,7 +190,7 @@ GEM
     meta-tags (2.22.1)
       actionpack (>= 6.0.0, < 8.1)
     mini_mime (1.1.5)
-    minitest (5.25.2)
+    minitest (5.25.3)
     net-http (0.6.0)
       uri
     net-imap (0.5.1)
@@ -364,7 +364,7 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
-    sorbet-runtime (0.5.11670)
+    sorbet-runtime (0.5.11672)
     sshkit (1.23.2)
       base64
       net-scp (>= 1.1.2)
