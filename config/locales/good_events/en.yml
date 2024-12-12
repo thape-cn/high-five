@@ -3,3 +3,5 @@ en:
   good_events:
     new:
       title: "A good event happens"
+    create:
+      success: "Good event was successfully created."

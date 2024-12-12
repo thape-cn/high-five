@@ -3,3 +3,5 @@ zh-CN:
   good_events:
     new:
       title: "庆祝一件好事的发生"
+    create:
+      success: "好事件创建成功。"
