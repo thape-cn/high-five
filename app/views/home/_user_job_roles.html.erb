@@ -23,10 +23,10 @@
                   </button>
                   <ul class="dropdown-menu" style="min-width: 76px;" aria-labelledby="btnGroupVerticalDrop1">
                     <li>
-                      <%= link_to GoodEvent.human_attribute_name(:good_title), new_good_events_path, class: "dropdown-item text-success", data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} %>
+                      <%= link_to GoodEvent.human_attribute_name(:good_title), new_good_events_path(user_id: user.id), class: "dropdown-item text-success", data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} %>
                     </li>
                     <li>
-                      <%= link_to BadEvent.human_attribute_name(:bad_title), new_bad_events_path, class: "dropdown-item text-danger", data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} %>
+                      <%= link_to BadEvent.human_attribute_name(:bad_title), new_bad_events_path(user_id: user.id), class: "dropdown-item text-danger", data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} %>
                     </li>
                   </ul>
                 </div>

@@ -8,7 +8,7 @@ class BadEventsController < ApplicationController
     @bad_event = BadEvent.new(bad_event_params)
 
     if @bad_event.valid?
-      current_user.user_bad_events.create(bad_event: @bad_event)
+      User.find(params[:user_id]).user_bad_events.create(bad_event: @bad_event)
       flash[:success] = t(".success")
     end
   end

@@ -8,7 +8,7 @@ class GoodEventsController < ApplicationController
     @good_event = GoodEvent.new(good_event_params)
 
     if @good_event.valid?
-      current_user.user_good_events.create(good_event: @good_event)
+      User.find(params[:user_id]).user_good_events.create(good_event: @good_event)
       flash[:success] = t(".success")
     end
   end
