@@ -33,3 +33,61 @@
     </div>
   </section>
 <% end %>
+
+<%# Timeline Section %>
+<div class="row d-flex justify-content-center mt-70 mb-70">
+  <%# Good Events Column %>
+  <div class="col-md-6">
+    <div class="main-card mb-3 card">
+      <div class="card-body">
+        <h5 class="card-title text-success">Good Events</h5>
+        <div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column">
+          <% @good_events&.each do |event| %>
+            <div class="vertical-timeline-item vertical-timeline-element">
+              <div>
+                <span class="vertical-timeline-element-icon bounce-in">
+                  <i class="badge badge-dot badge-dot-xl badge-success"></i>
+                </span>
+                <div class="vertical-timeline-element-content bounce-in">
+                  <h4 class="timeline-title"><%= event.good_title %></h4>
+                  <p><%= event.users.pluck(:chinese_name).to_sentence %></p>
+                  <span class="vertical-timeline-element-date">
+                    <%= event.created_at.strftime("%I:%M %p") %>
+                  </span>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%# Bad Events Column %>
+  <div class="col-md-6">
+    <div class="main-card mb-3 card">
+      <div class="card-body">
+        <h5 class="card-title text-danger">Bad Events</h5>
+        <div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column">
+          <% @bad_events&.each do |event| %>
+            <div class="vertical-timeline-item vertical-timeline-element">
+              <div>
+                <span class="vertical-timeline-element-icon bounce-in">
+                  <i class="badge badge-dot badge-dot-xl badge-danger"></i>
+                </span>
+                <div class="vertical-timeline-element-content bounce-in">
+                  <h4 class="timeline-title"><%= event.bad_title %></h4>
+                  <p><%= event.users.pluck(:chinese_name).to_sentence %></p>
+                  <span class="vertical-timeline-element-date">
+                    <%= event.created_at.strftime("%I:%M %p") %>
+                  </span>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
