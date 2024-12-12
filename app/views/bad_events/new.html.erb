@@ -7,7 +7,13 @@
       </div>
       <div class="modal-body">
         <div class="container-fluid">
-        </div>
+          <div class="row mb-3">
+            <%= f.label :bad_title, class: 'col-4 col-form-label' %>
+            <div class="col-8">
+              <%= f.text_field :bad_title, class: 'form-control' %>
+            </div>
+          </div>
+        </div>          
       </div>
       <div class="modal-footer">
         <%= f.submit t('form.create'), class: 'btn btn-primary', data: {'coreui-dismiss': :modal} %>

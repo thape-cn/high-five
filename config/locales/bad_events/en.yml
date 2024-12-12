@@ -2,4 +2,6 @@
 en:
   bad_events:
     new:
-      title: "A bad event"
+      title: "A bad event happens"
+    create:
+      success: "Bad event was successfully created."

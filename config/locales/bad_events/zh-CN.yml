@@ -2,4 +2,6 @@
 zh-CN:
   bad_events:
     new:
-      title: "一件坏事"
+      title: "记录一件不好的事情"
+    create:
+      success: "不好的事件已记录。"
