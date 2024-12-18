@@ -28,6 +28,9 @@ Rails.application.routes.draw do
     end
     resource :user_select, only: %i[show]
   end
-  # Defines the root path route ("/")
   root "home#index"
+
+  constraints(id: /[#{User::LOGIN_FORMAT}]*/o) do
+    resources :users, path: "", as: "users", only: %i[show]
+  end
 end

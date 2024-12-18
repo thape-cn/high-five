@@ -15,6 +15,12 @@ class User < ApplicationRecord
 
   normalizes :email, with: ->(email) { email.downcase.strip }
 
+  LOGIN_FORMAT = 'A-Za-z0-9\-\_\.'
+
+  def user_name
+    email.split("@").first
+  end
+
   def admin?
     CoreUIsettings.admin.emails.include?(email)
   end

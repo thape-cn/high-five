@@ -1,6 +1,6 @@
 <% user_job_roles.each do |role| %>
   <h4>
-    <span class="float-start"><%= role.user.chinese_name -%></span>
+    <span class="float-start"><%= link_to role.user.chinese_name, user_path(id: role.user.user_name) -%></span>
     &nbsp;
     <small class="text-muted"><%= role.title %></small>
     <small class="text-muted float-end"><%= role.company %></small>
@@ -14,7 +14,7 @@
             <span class="badge rounded-pill text-bg-success float-end"><%= user.good_events_count -%></span>
             <span class="badge rounded-pill text-bg-danger float-end mx-1"><%= user.bad_events_count -%></span>
             <div class="text-left">
-              <div><%= user.chinese_name %></div>
+              <div><%= link_to user.chinese_name, user_path(id: user.user_name) %></div>
               <small class="text-muted"><%= managed_role.title %></small>
               <div class="btn-group-vertical float-end" role="group" aria-label="Vertical button group">
                 <div class="btn-group btn-group-sm" role="group">
