@@ -32,6 +32,7 @@
  visibility: visible;
  animation: cd-bounce-1 .8s;
 }
+
 .vertical-timeline-element-icon {
  position: absolute;
  top: 0;
@@ -45,12 +46,8 @@
 .badge-dot-xl {
  width: 18px;
  height: 18px;
- position: relative;
+ background: white;
 }
-.badge:empty {
- display: none;
-}
-
 
 .badge-dot-xl::before {
  content: '';
