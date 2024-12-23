@@ -7,7 +7,7 @@
   <div class="col-md-6">
     <div class="main-card mb-3 card">
       <div class="card-body">
-        <h5 class="card-title text-success">Good Events</h5>
+        <h5 class="card-title text-success"><%= GoodEvent.human_attribute_name(:good_title) -%></h5>
         <div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column">
           <% @good_events&.each do |event| %>
             <div class="vertical-timeline-item vertical-timeline-element">
@@ -36,7 +36,7 @@
   <div class="col-md-6">
     <div class="main-card mb-3 card">
       <div class="card-body">
-        <h5 class="card-title text-danger">Bad Events</h5>
+        <h5 class="card-title text-danger"><%= BadEvent.human_attribute_name(:bad_title) -%></h5>
         <div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column">
           <% @bad_events&.each do |event| %>
             <div class="vertical-timeline-item vertical-timeline-element">
