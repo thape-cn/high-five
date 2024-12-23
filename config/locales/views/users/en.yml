@@ -2,4 +2,4 @@
 en:
   users:
     show:
-      title: "User home"
+      title: "%{name}'s home"

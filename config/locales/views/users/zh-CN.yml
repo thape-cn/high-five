@@ -2,4 +2,4 @@
 zh-CN:
   users:
     show:
-      title: "用户首页"
+      title: "%{name}的首页"
