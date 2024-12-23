@@ -1,0 +1,20 @@
+<div class="vertical-timeline vertical-timeline--animate vertical-timeline--one-column">
+  <% good_events&.each do |event| %>
+    <div class="vertical-timeline-item vertical-timeline-element">
+      <div>
+                <span class="vertical-timeline-element-icon bounce-in">
+                  <%= svg_icon('free.svg#cil-chevron-double-down', 'badge-dot-xl text-success') %>
+                </span>
+        <div class="vertical-timeline-element-content bounce-in">
+          <h4 class="timeline-title"><%= event.good_title %></h4>
+          <p>
+            <%= event.users.map { |user| link_to user.chinese_name, user_path(id: user.user_name) }.to_sentence.html_safe %>
+          </p>
+          <span class="vertical-timeline-element-date">
+                    <%= event.created_at.strftime("%I:%M %p") %>
+                  </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
