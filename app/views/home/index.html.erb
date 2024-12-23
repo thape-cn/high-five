@@ -50,7 +50,9 @@
                 </span>
                 <div class="vertical-timeline-element-content bounce-in">
                   <h4 class="timeline-title"><%= event.good_title %></h4>
-                  <p><%= event.users.pluck(:chinese_name).to_sentence %></p>
+                  <p>
+                    <%= event.users.map { |user| link_to user.chinese_name, user_path(id: user.user_name) }.to_sentence.html_safe %>
+                  </p>
                   <span class="vertical-timeline-element-date">
                     <%= event.created_at.strftime("%I:%M %p") %>
                   </span>
@@ -77,7 +79,9 @@
                 </span>
                 <div class="vertical-timeline-element-content bounce-in">
                   <h4 class="timeline-title"><%= event.bad_title %></h4>
-                  <p><%= event.users.pluck(:chinese_name).to_sentence %></p>
+                  <p>
+                    <%= event.users.map { |user| link_to user.chinese_name, user_path(id: user.user_name) }.to_sentence.html_safe %>
+                  </p>
                   <span class="vertical-timeline-element-date">
                     <%= event.created_at.strftime("%I:%M %p") %>
                   </span>
