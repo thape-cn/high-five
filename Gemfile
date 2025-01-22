@@ -13,7 +13,7 @@ gem "pg"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma"
 
-gem "shakapacker", "~> 8.0"
+gem "shakapacker", "~> 8.1"
 
 gem "jbuilder"
 
