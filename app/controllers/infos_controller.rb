@@ -11,11 +11,7 @@ class InfosController < ApplicationController
       enable_social_oauth_login: false,
       is_allow_register: false,
       is_allow_create_workspace: true,
-      is_email_setup: false,
-      license: {
-        status: "active",
-        expired_at: ""
-      }
+      is_email_setup: false
     }
   end
 end
