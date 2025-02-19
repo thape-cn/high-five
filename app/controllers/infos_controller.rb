@@ -10,7 +10,7 @@ class InfosController < ApplicationController
       enable_email_password_login: true,
       enable_social_oauth_login: false,
       is_allow_register: false,
-      is_allow_create_workspace: true,
+      is_allow_create_workspace: false,
       is_email_setup: false
     }
   end
