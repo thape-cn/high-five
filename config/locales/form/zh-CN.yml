@@ -10,4 +10,6 @@ zh-CN:
     reset: "重置"
     write: "记一笔"
     close: "关闭"
+    upload: "上传"
+    upload_file: "上传文件"
     excel_report: "导出 Excel 报表"

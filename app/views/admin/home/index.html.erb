@@ -4,6 +4,16 @@
   <%= append_javascript_pack_tag 'dashboard' %>
 <% end %>
 
+<%- content_for :action_bar do %>
+  <ol>
+    <li class="action_bar-item">
+      <%= link_to new_admin_contract_path, class: "btn btn-outline-primary", data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do %>
+        <%= t("contracts.new") %> <%= svg_icon('free.svg#cil-plus', %w[icon]) -%>
+      <% end %>
+    </li>
+  </ol>
+<% end %>
+
 <div class="row justify-content-center">
   <div class="col-lg-12">
     <div class="row">
@@ -28,6 +38,7 @@
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
+            <th><%= t('contracts.upload_file_id') -%></th>
             <th><%= t('contracts.contract_type') -%></th>
             <th><%= t('contracts.contract_nature') -%></th>
             <th><%= t('contracts.contract_name') -%></th>
@@ -37,6 +48,7 @@
         <tbody>
           <% @contracts.each do |contract| %>
             <tr>
+              <td><%= contract.upload_file_id -%></td>
               <td><%= contract.contract_type -%></td>
               <td><%= contract.contract_nature -%></td>
               <td><%= contract.contract_name -%></td>

@@ -1,6 +1,8 @@
 ---
 en:
   contracts:
+    new: "Upload new contract"
+    upload_file_id: "Upload file ID"
     contract_type: "Contract Type"
     contract_nature: "Contract Nature"
     east_boundary: "East Boundary"

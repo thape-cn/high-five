@@ -10,4 +10,6 @@ en:
     reset: "Reset"
     write: "Write"
     close: "Close"
+    upload: "Upload"
+    upload_file: "Upload file"
     excel_report: "Export Excel report"
