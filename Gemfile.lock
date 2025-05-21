@@ -1,6 +1,6 @@
 GIT
   remote: https://git.thape.com.cn/rails/ruby_llm.git
-  revision: 49fecd5a492acb9995c561a53c1a2fca80222610
+  revision: 9c3fb4f2dde2a8b88b63db3850c34b6c671e9df7
   branch: dify_api
   specs:
     ruby_llm (1.3.0rc1)
