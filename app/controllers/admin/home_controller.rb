@@ -10,6 +10,7 @@ module Admin
         .limit(7)
         .count
         .to_a.shuffle
+      @contracts = ContractBasic.all
     end
 
     protected

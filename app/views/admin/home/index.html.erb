@@ -24,5 +24,27 @@
         </div>
       </div>
     </div>
+    <div class="container">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th><%= t('contracts.contract_type') -%></th>
+            <th><%= t('contracts.contract_nature') -%></th>
+            <th><%= t('contracts.contract_name') -%></th>
+            <th><%= t('form.action') -%></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @contracts.each do |contract| %>
+            <tr>
+              <td><%= contract.contract_type -%></td>
+              <td><%= contract.contract_nature -%></td>
+              <td><%= contract.contract_name -%></td>
+              <td></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
