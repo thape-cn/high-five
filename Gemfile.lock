@@ -1,3 +1,18 @@
+GIT
+  remote: https://git.thape.com.cn/rails/ruby_llm.git
+  revision: 4bbec7face261bf2d9ba3b58daad8530bbc3d740
+  branch: dify_api
+  specs:
+    ruby_llm (1.3.0rc1)
+      base64
+      event_stream_parser (~> 1)
+      faraday (>= 1.10.0)
+      faraday-multipart (>= 1)
+      faraday-net_http (>= 1)
+      faraday-retry (>= 1)
+      marcel (~> 1.0)
+      zeitwerk (~> 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -148,14 +163,19 @@ GEM
       activemodel
     erb (5.0.1)
     erubi (1.13.1)
+    event_stream_parser (1.0.0)
     faraday (2.13.1)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
     faraday-follow_redirects (0.3.0)
       faraday (>= 1, < 3)
+    faraday-multipart (1.1.0)
+      multipart-post (~> 2.0)
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
+    faraday-retry (2.3.1)
+      faraday (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (5.0.0)
@@ -195,6 +215,7 @@ GEM
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.25.5)
+    multipart-post (2.4.1)
     net-http (0.6.0)
       uri
     net-imap (0.5.8)
@@ -380,7 +401,7 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
-    sorbet-runtime (0.5.12117)
+    sorbet-runtime (0.5.12119)
     sshkit (1.24.0)
       base64
       logger
@@ -474,6 +495,7 @@ DEPENDENCIES
   rails (~> 8.0.1)
   ruby-lsp
   ruby-lsp-rails
+  ruby_llm!
   selenium-webdriver (>= 4.25.0)
   shakapacker (~> 8.2)
   standard

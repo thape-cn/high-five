@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "~> 3.2"
 
-# bundle config local.rails /Users/guochunzhong/git/oss/rails
+# bundle config local.rails /Users/$(whoami)/git/oss/rails
 gem "rails", "~> 8.0.1"
 gem "csv"
 gem "propshaft"
@@ -16,6 +16,9 @@ gem "puma"
 gem "shakapacker", "~> 8.2"
 
 gem "jbuilder"
+
+# bundle config local.ruby_llm /Users/$(whoami)/git/oss/ruby_llm/
+gem "ruby_llm", git: "https://git.thape.com.cn/rails/ruby_llm.git", branch: :dify_api
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
