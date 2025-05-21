@@ -157,7 +157,7 @@ GEM
     devise-i18n (1.13.0)
       devise (>= 4.9.0)
       rails-i18n
-    drb (2.2.1)
+    drb (2.2.3)
     ed25519 (1.4.0)
     email_validator (2.2.4)
       activemodel
