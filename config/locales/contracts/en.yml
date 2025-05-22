@@ -30,3 +30,5 @@ en:
     discount_rate: "Discount Rate"
     developer_name: "Developer Name"
     developer_type: "Developer Type"
+    confirm_destroy:
+      title: "Confirm removed this contract?"

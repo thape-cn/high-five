@@ -1,6 +1,10 @@
 namespace :admin do
   root to: "home#index"
-  resources :contracts, only: %i[new create]
+  resources :contracts, only: %i[new create destroy] do
+    member do
+      get :confirm_destroy
+    end
+  end
   resources :users, only: %i[index edit update new create] do
     member do
       get :impersonation

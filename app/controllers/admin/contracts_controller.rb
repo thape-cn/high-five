@@ -1,5 +1,7 @@
 module Admin
   class ContractsController < BaseController
+    before_action :set_contract_basic, only: %i[destroy confirm_destroy]
+
     def new
       @contract_basic = authorize ContractBasic.new
       render layout: false
@@ -16,7 +18,20 @@ module Admin
       end
     end
 
+    def confirm_destroy
+      render layout: false
+    end
+
+    def destroy
+      return unless @contract_basic.present?
+      @contract_basic.destroy
+    end
+
     private
+
+    def set_contract_basic
+      @contract_basic = authorize ContractBasic.find(params[:id])
+    end
 
     def contract_params
       params.permit(:file, :authenticity_token, :commit)

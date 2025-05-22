@@ -16,4 +16,12 @@ class ContractBasicPolicy < ApplicationPolicy
   def create?
     new?
   end
+
+  def destroy?
+    user.admin?
+  end
+
+  def confirm_destroy?
+    user.admin?
+  end
 end
