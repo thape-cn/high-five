@@ -39,6 +39,7 @@
         <thead>
           <tr>
             <th><%= t('contracts.upload_file_id') -%></th>
+            <th><%= t('contracts.upload_filename') -%></th>
             <th><%= t('contracts.contract_type') -%></th>
             <th><%= t('contracts.contract_nature') -%></th>
             <th><%= t('contracts.contract_name') -%></th>
@@ -49,6 +50,7 @@
           <% @contracts.each do |contract| %>
             <tr>
               <td><%= contract.upload_file_id -%></td>
+              <td><%= contract.upload_filename -%></td>
               <td><%= contract.contract_type -%></td>
               <td><%= contract.contract_nature -%></td>
               <td><%= contract.contract_name -%></td>

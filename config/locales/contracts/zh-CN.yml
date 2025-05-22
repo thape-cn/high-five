@@ -3,6 +3,7 @@ zh-CN:
   contracts:
     new: "上传新合同"
     upload_file_id: "上传文件 ID"
+    upload_filename: "上传文件名"
     contract_type: "合同类型"
     contract_nature: "合同性质"
     east_boundary: "东至"

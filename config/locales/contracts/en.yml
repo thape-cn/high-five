@@ -3,6 +3,7 @@ en:
   contracts:
     new: "Upload new contract"
     upload_file_id: "Upload file ID"
+    upload_filename: "Upload filename"
     contract_type: "Contract Type"
     contract_nature: "Contract Nature"
     east_boundary: "East Boundary"

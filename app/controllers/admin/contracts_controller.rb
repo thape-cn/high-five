@@ -11,7 +11,8 @@ module Admin
       response = chat.upload_document(file)
       if response.status == 201
         upload_file_id = response.body[:id]
-        authorize ContractBasic.create(upload_file_id: upload_file_id)
+        upload_filename = response.body[:name]
+        authorize ContractBasic.create(upload_file_id:, upload_filename:)
       end
     end
 
