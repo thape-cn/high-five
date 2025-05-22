@@ -57,8 +57,18 @@
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
               </td>
-              <td><%= contract.contract_nature -%></td>
-              <td><%= contract.contract_name -%></td>
+              <td>
+                <%= contract.contract_nature -%>
+                <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :contract_nature), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                  <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
+                <% end %>
+              </td>
+              <td>
+                <%= contract.contract_name -%>
+                <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :contract_name), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                  <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
+                <% end %>
+              </td>
               <td>
                 <%= link_to confirm_destroy_admin_contract_path(id: contract.id), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-delete', %w[icon icon-lg]) -%>
