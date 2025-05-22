@@ -2,6 +2,7 @@ namespace :admin do
   root to: "home#index"
   resources :contracts, only: %i[new create destroy] do
     member do
+      get :invoke_ai
       get :confirm_destroy
     end
   end

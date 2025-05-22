@@ -51,7 +51,12 @@
             <tr>
               <td><%= contract.upload_file_id -%></td>
               <td><%= contract.upload_filename -%></td>
-              <td><%= contract.contract_type -%></td>
+              <td>
+                <%= contract.contract_type -%>
+                <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :contract_type), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                  <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
+                <% end %>
+              </td>
               <td><%= contract.contract_nature -%></td>
               <td><%= contract.contract_name -%></td>
               <td>

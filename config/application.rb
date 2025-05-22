@@ -39,5 +39,6 @@ module CoreuiProRailsStarter
 
     config.i18n.available_locales = %i[en zh-CN]
     config.i18n.default_locale = "zh-CN"
+    Rails.backtrace_cleaner.remove_silencers!
   end
 end
