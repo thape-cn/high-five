@@ -31,7 +31,7 @@ module Admin
         config.dify_api_key = field_dify_key
       end)
       response = dify_chat.ask "合同数据录入", with: @contract_basic.upload_file_id
-      Rails.logger.debug "invoke_ai response #{response}"
+      Rails.logger.info "invoke_ai #{field_name} with #{@contract_basic.upload_file_id}: #{response.content}"
     end
 
     def confirm_destroy
