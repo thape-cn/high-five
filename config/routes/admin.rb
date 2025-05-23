@@ -1,3 +1,5 @@
+require "sidekiq/web"
+
 namespace :admin do
   root to: "home#index"
   resources :contracts, only: %i[new create destroy] do
@@ -22,5 +24,8 @@ namespace :admin do
     collection do
       get :expender
     end
+  end
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => "/sidekiq"
   end
 end

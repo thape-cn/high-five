@@ -41,6 +41,8 @@ gem "config"
 gem "ajax-datatables-rails"
 gem "pagy"
 
+gem "sidekiq"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
@@ -73,6 +75,7 @@ group :development do
   gem "capistrano-yarn"
   gem "capistrano-rbenv"
   gem "capistrano3-puma", ">= 6.0.0.beta.1"
+  gem "capistrano-sidekiq"
 
   gem "ed25519"
   gem "bcrypt_pbkdf"
