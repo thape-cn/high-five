@@ -15,7 +15,7 @@ zh-CN:
     currency: "币种"
     contract_amount: "合同金额"
     split_contract_amount: "切分合同金额"
-    actual_contract_amount: "实际合同额"
+    actual_contract_amount: "实际合同金额"
     party_a: "甲方"
     party_b: "乙方"
     scale_type: "规模类型"
