@@ -18,6 +18,10 @@ module Admin
       end
     end
 
+    def show
+      @contract_basic = authorize ContractBasic.find_by(upload_file_id: params[:id])
+    end
+
     def invoke_ai
       @field_name = params["field_name"]
       @begin_time = Time.zone.now

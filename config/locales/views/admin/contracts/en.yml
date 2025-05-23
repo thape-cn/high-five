@@ -1,0 +1,6 @@
+---
+en:
+  admin:
+    contracts:
+      show:
+        title: "Show contract detail"

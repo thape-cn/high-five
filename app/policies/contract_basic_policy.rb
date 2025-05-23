@@ -17,6 +17,10 @@ class ContractBasicPolicy < ApplicationPolicy
     new?
   end
 
+  def show?
+    user.admin?
+  end
+
   def invoke_ai?
     user.admin?
   end
