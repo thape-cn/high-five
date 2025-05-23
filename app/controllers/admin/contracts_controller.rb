@@ -19,12 +19,17 @@ module Admin
     end
 
     def invoke_ai
-      field_name = params["field_name"]
-      field_dify_key = Rails.application.credentials.dify_keys[field_name]
+      @field_name = params["field_name"]
+      @begin_time = Time.zone.now
+      field_dify_key = Rails.application.credentials.dify_keys[@field_name]
       dify_chat = initialize_dify_chat(field_dify_key)
-      response = dify_chat.ask "合同数据录入", with: @contract_basic.upload_file_id
-      Rails.logger.info "invoke_ai #{field_name} with #{@contract_basic.upload_file_id}: #{response.content}"
-      @contract_basic.update_attribute(field_name, response.content)
+      @response = dify_chat.ask "合同数据录入", with: @contract_basic.upload_file_id
+      Rails.logger.info "log in invoke_ai #{@field_name} with #{@contract_basic.upload_file_id}: #{@response.content}"
+      @contract_basic.update_attribute(@field_name, @response.content)
+      render layout: false
+    rescue => exception
+      Rails.logger.info "exception in invoke_ai #{field_name} with #{@contract_basic.upload_file_id}: #{exception}"
+      render layout: false
     end
 
     def confirm_destroy

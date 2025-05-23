@@ -32,3 +32,5 @@ en:
     developer_type: "Developer Type"
     confirm_destroy:
       title: "Confirm removed this contract?"
+    invoke_ai:
+      title: "Synchronizing AI call results."

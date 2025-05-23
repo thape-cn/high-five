@@ -1,0 +1,16 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= t("contracts.invoke_ai.title") -%></h5>
+        <button class="btn-close" type="button" data-coreui-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        字段：<%= @field_name -%>
+        结果：<%= @response.content -%>
+        用时：<%= distance_of_time_in_words_to_now(@begin_time) %>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-coreui-dismiss="modal"><%= t("form.close") -%></button>
+      </div>
+  </div>
+</div>
