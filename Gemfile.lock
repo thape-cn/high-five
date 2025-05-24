@@ -1,5 +1,5 @@
 GIT
-  remote: https://git.thape.com.cn/rails/ruby_llm.git
+  remote: https://git.thape.com.cn/ai/ruby_llm.git
   revision: 48484217945fe2de3db875d2ee6a31a2d3fa7ff7
   branch: dify_api
   specs:
