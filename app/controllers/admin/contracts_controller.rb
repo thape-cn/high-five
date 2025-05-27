@@ -1,5 +1,7 @@
 module Admin
   class ContractsController < BaseController
+    include DifyChatInitializable
+
     before_action :set_contract_basic, only: %i[invoke_ai destroy confirm_destroy]
 
     def new
@@ -53,15 +55,6 @@ module Admin
 
     def contract_params
       params.permit(:file, :authenticity_token, :commit)
-    end
-
-    def initialize_dify_chat(api_key = Rails.application.credentials.dify_api_key)
-      dify_chat = RubyLLM.chat(model: "dify-api", provider: :dify, assume_model_exists: true)
-      dify_chat.with_context(RubyLLM.context do |config|
-        config.dify_api_base = Rails.application.credentials.dify_base_url
-        config.dify_api_key = api_key
-      end)
-      dify_chat
     end
   end
 end
