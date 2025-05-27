@@ -30,6 +30,10 @@ Rails.application.routes.draw do
     end
     resource :user_select, only: %i[show]
   end
+
+  # Add workspace info route
+  get "workspace/:id/info" => "workspace#info"
+
   root "home#index"
 
   constraints(id: /[#{User::LOGIN_FORMAT}]*/o) do
