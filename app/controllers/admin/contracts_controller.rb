@@ -43,6 +43,11 @@ module Admin
     end
 
     def batch_ai_filling
+      ContractBasic::NEED_COMPLETE_FIELDS.each do |field_name|
+        next if @contract_basic[field_name].present?
+
+        AI::ContractBasicFillingJob.perform_async(@contract_basic.id, field_name.to_s)
+      end
     end
 
     def confirm_destroy
