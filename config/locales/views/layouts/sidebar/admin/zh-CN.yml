@@ -7,3 +7,4 @@ zh-CN:
         dashboard: "管理员仪表板"
         my_team: "我的团队"
         account: "账号"
+        background_jobs: "后端队列"

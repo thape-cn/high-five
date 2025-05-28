@@ -27,6 +27,7 @@ namespace :admin do
       get :expender
     end
   end
+  resource :background_jobs, only: %i[show]
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => "/sidekiq"
   end
