@@ -1,2 +1,33 @@
 class ContractBasic < ApplicationRecord
+  NEED_COMPLETE_FIELDS = [
+    :contract_nature,
+    :east_boundary,
+    :south_boundary,
+    :west_boundary,
+    :north_boundary,
+    :contract_name,
+    :project_land_use_nature,
+    :currency,
+    :contract_amount,
+    :split_contract_amount,
+    :actual_contract_amount,
+    :party_a,
+    :party_b,
+    :scale_type,
+    :scale_area,
+    :beneficiary_bank_account,
+    :beneficiary_bank,
+    :is_epc,
+    :is_design_general_contractor,
+    :project_tag,
+    :quotation_method,
+    :construction_and_installation_fee,
+    :discount_rate,
+    :developer_name,
+    :developer_type
+  ].freeze
+
+  def complete_field_count
+    NEED_COMPLETE_FIELDS.count { |field| self[field].present? }
+  end
 end
