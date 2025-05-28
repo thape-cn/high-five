@@ -86,6 +86,9 @@
                 <%= contract.complete_field_count -%> / <%= ContractBasic::NEED_COMPLETE_FIELDS.count -%>
               </td>
               <td>
+                <%= link_to confirm_batch_ai_filling_admin_contract_path(id: contract.id), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                  <%= svg_icon('free.svg#cil-apps-settings', %w[icon icon-lg]) -%>
+                <% end %>
                 <%= link_to confirm_destroy_admin_contract_path(id: contract.id), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-delete', %w[icon icon-lg]) -%>
                 <% end %>

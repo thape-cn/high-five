@@ -2,7 +2,7 @@ module Admin
   class ContractsController < BaseController
     include DifyChatInitializable
 
-    before_action :set_contract_basic, only: %i[invoke_ai destroy confirm_destroy]
+    before_action :set_contract_basic, only: %i[invoke_ai confirm_batch_ai_filling batch_ai_filling confirm_destroy destroy]
 
     def new
       @contract_basic = authorize ContractBasic.new
@@ -36,6 +36,13 @@ module Admin
     rescue => exception
       Rails.logger.info "exception in invoke_ai #{field_name} with #{@contract_basic.upload_file_id}: #{exception}"
       render layout: false
+    end
+
+    def confirm_batch_ai_filling
+      render layout: false
+    end
+
+    def batch_ai_filling
     end
 
     def confirm_destroy
