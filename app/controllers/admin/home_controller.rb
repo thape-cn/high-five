@@ -10,7 +10,7 @@ module Admin
         .limit(7)
         .count
         .to_a.shuffle
-      @contracts = ContractBasic.all
+      @contracts = ContractBasic.all.order(id: :desc)
     end
 
     protected

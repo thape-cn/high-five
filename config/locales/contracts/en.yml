@@ -4,6 +4,7 @@ en:
     new: "Upload new contract"
     upload_file_id: "Upload file ID"
     upload_filename: "Upload filename"
+    complete_field_count: "Complete field count"
     contract_type: "Contract Type"
     contract_nature: "Contract Nature"
     east_boundary: "East Boundary"

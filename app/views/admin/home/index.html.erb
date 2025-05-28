@@ -44,6 +44,7 @@
             <th><%= t('contracts.contract_name') -%></th>
             <th><%= t('contracts.party_a') -%></th>
             <th><%= t('contracts.party_b') -%></th>
+            <th><%= t('contracts.complete_field_count') -%></th>
             <th><%= t('form.action') -%></th>
           </tr>
         </thead>
@@ -80,6 +81,9 @@
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :party_b), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
+              </td>
+              <td>
+                <%= contract.complete_field_count -%> / <%= ContractBasic::NEED_COMPLETE_FIELDS.count -%>
               </td>
               <td>
                 <%= link_to confirm_destroy_admin_contract_path(id: contract.id), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
