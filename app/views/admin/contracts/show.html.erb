@@ -108,8 +108,18 @@
             <td></td>
             <td><strong><%= t('contracts.project_tag') -%>：</strong></td>
             <td><%= @contract_basic.project_tag %></td>
-            <td></td>
-            <td></td>
+            <td><strong><%= t('contracts.quotation_method') -%>：</strong></td>
+            <td><%= @contract_basic.quotation_method %></td>
+            <td><strong><%= t('contracts.construction_and_installation_fee') -%>：</strong></td>
+            <td><%= @contract_basic.construction_and_installation_fee %></td>
+          </tr>
+          <tr>
+            <td><strong><%= t('contracts.discount_rate') -%>：</strong></td>
+            <td><%= @contract_basic.discount_rate %></td>
+            <td><strong><%= t('contracts.developer_name') -%>：</strong></td>
+            <td><%= @contract_basic.developer_name %></td>
+            <td><strong><%= t('contracts.developer_type') -%>：</strong></td>
+            <td><%= @contract_basic.developer_type %></td>
             <td></td>
             <td></td>
           </tr>
