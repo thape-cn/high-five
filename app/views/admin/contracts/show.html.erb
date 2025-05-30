@@ -12,130 +12,104 @@
         </thead>
         <tbody>
           <tr>
-            <td>
-              <strong><%= t('contracts.contract_type') -%>：</strong>
-              <%= @contract_basic.contract_type %>
-            </td>
-            <td>
-              <strong><%= t('contracts.contract_nature') -%>：</strong>
-              <%= @contract_basic.contract_nature %>
-            </td>
-            <td><strong>主合同编号</strong> </td>
-            <td><strong>主合同名称</strong> </td>
+            <td><strong><%= t('contracts.contract_type') -%>：</strong></td>
+            <td><%= @contract_basic.contract_type %></td>
+            <td><strong><%= t('contracts.contract_nature') -%>：</strong></td>
+            <td><%= @contract_basic.contract_nature %></td>
+            <td><strong>主合同编号</strong></td>
+            <td></td>
+            <td><strong>主合同名称</strong></td>
+            <td></td>
           </tr>
           <tr>
-            <td><strong>来源商机编号</strong> </td>
-            <td><strong>来源商机名称</strong> </td>
-            <td><strong>工程编号</strong> </td>
-            <td><strong>工程名称</strong> </td>
+            <td><strong>来源商机编号</strong></td>
+            <td></td>
+            <td><strong>来源商机名称</strong></td>
+            <td></td>
+            <td><strong>工程编号</strong></td>
+            <td></td>
+            <td><strong>工程名称</strong></td>
+            <td></td>
           </tr>
           <tr>
-            <td>
-              <strong><%= t('contracts.east_boundary') -%>：</strong>
-              <%= @contract_basic.east_boundary %>
-            </td>
-            <td>
-              <strong><%= t('contracts.south_boundary') -%>：</strong>
-              <%= @contract_basic.south_boundary %>
-            </td>
-            <td>
-              <strong><%= t('contracts.west_boundary') -%>：</strong>
-              <%= @contract_basic.west_boundary %>
-            </td>
-            <td>
-              <strong><%= t('contracts.north_boundary') -%>：</strong>
-              <%= @contract_basic.north_boundary %>
-            </td>
+            <td><strong><%= t('contracts.east_boundary') -%>：</strong></td>
+            <td><%= @contract_basic.east_boundary %></td>
+            <td><strong><%= t('contracts.south_boundary') -%>：</strong></td>
+            <td><%= @contract_basic.south_boundary %></td>
+            <td><strong><%= t('contracts.west_boundary') -%>：</strong></td>
+            <td><%= @contract_basic.west_boundary %></td>
+            <td><strong><%= t('contracts.north_boundary') -%>：</strong></td>
+            <td><%= @contract_basic.north_boundary %></td>
           </tr>
           <tr>
-            <td><strong>合同编号</strong> </td>
-            <td>
-              <strong><%= t('contracts.contract_name') -%>：</strong>
-              <%= @contract_basic.contract_name %>
-            </td>
-            <td>
-              <strong><%= t('contracts.project_land_use_nature') -%></strong>
-              <%= @contract_basic.project_land_use_nature %>
-            </td>
-            <td><strong>线索提供人</strong> </td>
+            <td><strong>合同编号</strong></td>
+            <td></td>
+            <td><strong><%= t('contracts.contract_name') -%>：</strong></td>
+            <td><%= @contract_basic.contract_name %></td>
+            <td><strong><%= t('contracts.project_land_use_nature') -%></strong></td>
+            <td><%= @contract_basic.project_land_use_nature %></td>
+            <td><strong>线索提供人</strong></td>
+            <td></td>
           </tr>
           <tr>
-            <td>
-              <strong><%= t('contracts.currency') -%>：</strong>
-              <%= @contract_basic.currency %>
-            </td>
-            <td>
-              <strong><%= t('contracts.contract_amount') -%>:</strong>
-              <%= @contract_basic.contract_amount %>
-            </td>
-            <td>
-              <strong><%= t('contracts.split_contract_amount') -%>:</strong>
-              <%= @contract_basic.split_contract_amount %>
-            </td>
-            <td>
-              <strong><%= t('contracts.actual_contract_amount') -%>：</strong>
-              <%= @contract_basic.actual_contract_amount %>
-            </td>
+            <td><strong><%= t('contracts.currency') -%>：</strong></td>
+            <td><%= @contract_basic.currency %></td>
+            <td><strong><%= t('contracts.contract_amount') -%>:</strong></td>
+            <td><%= @contract_basic.contract_amount %></td>
+            <td><strong><%= t('contracts.split_contract_amount') -%>:</strong></td>
+            <td><%= @contract_basic.split_contract_amount %></td>
+            <td><strong><%= t('contracts.actual_contract_amount') -%>：</strong></td>
+            <td><%= @contract_basic.actual_contract_amount %></td>
           </tr>
           <tr>
-            <td colspan="2">
-              <strong><%= t('contracts.party_a') -%>：</strong>
-              <%= @contract_basic.party_a %>
-            </td>
-            <td colspan="2">
-              <strong><%= t('contracts.party_b') -%>：</strong>
-              <%= @contract_basic.party_b %>
-            </td>
+            <td><strong><%= t('contracts.party_a') -%>：</strong></td>
+            <td colspan="3"><%= @contract_basic.party_a %></td>
+            <td><strong><%= t('contracts.party_b') -%>：</strong></td>
+            <td colspan="3"><%= @contract_basic.party_b %></td>
           </tr>
           <tr>
-            <td><strong>丙方：</strong> </td>
-            <td>
-              <strong><%= t('contracts.developer_name') -%>：</strong>
-              <%= @contract_basic.developer_name %>
-            </td>
-            <td>
-              <strong><%= t('contracts.scale_type') -%>：</strong>
-              <%= @contract_basic.scale_type %>
-            </td>
-            <td>
-              <strong><%= t('contracts.scale_area') -%>：</strong>
-              <%= @contract_basic.scale_area %>
-            </td>
+            <td><strong>丙方：</strong></td>
+            <td></td>
+            <td><strong><%= t('contracts.developer_name') -%>：</strong></td>
+            <td><%= @contract_basic.developer_name %></td>
+            <td><strong><%= t('contracts.scale_type') -%>：</strong></td>
+            <td><%= @contract_basic.scale_type %></td>
+            <td><strong><%= t('contracts.scale_area') -%>：</strong></td>
+            <td><%= @contract_basic.scale_area %></td>
           </tr>
           <tr>
-            <td><strong>商务责任公司：</strong> </td>
-            <td><strong>商务责任部门：</strong> </td>
-            <td><strong>商务负责人：</strong> </td>
-            <td><strong>商务协助人：</strong> </td>
+            <td><strong>商务责任公司：</strong></td>
+            <td></td>
+            <td><strong>商务责任部门：</strong></td>
+            <td></td>
+            <td><strong>商务负责人：</strong></td>
+            <td></td>
+            <td><strong>商务协助人：</strong></td>
+            <td></td>
           </tr>
           <tr>
-            <td colspan="2">
-              <strong><%= t('contracts.beneficiary_bank_account') -%>：</strong>
-              <%= @contract_basic.beneficiary_bank_account %>
-            </td>
-            <td colspan="2">
-              <strong><%= t('contracts.beneficiary_bank') -%>：</strong>
-              <%= @contract_basic.beneficiary_bank %>
-            </td>
+            <td><strong><%= t('contracts.beneficiary_bank_account') -%>：</strong></td>
+            <td colspan="3"><%= @contract_basic.beneficiary_bank_account %></td>
+            <td><strong><%= t('contracts.beneficiary_bank') -%>：</strong></td>
+            <td colspan="3"><%= @contract_basic.beneficiary_bank %></td>
           </tr>
           <tr>
-            <td>
-              <strong><%= t('contracts.is_epc') -%>:</strong>
-              <%= @contract_basic.is_epc %>
-            </td>
-            <td>
-              <strong><%= t('contracts.is_design_general_contractor') -%>：</strong>
-              <%= @contract_basic.is_design_general_contractor %>
-            </td>
-            <td><strong>协议有效期：</strong> </td>
-            <td><strong></strong> </td>
+            <td><strong><%= t('contracts.is_epc') -%>:</strong></td>
+            <td><%= @contract_basic.is_epc %></td>
+            <td><strong><%= t('contracts.is_design_general_contractor') -%>：</strong></td>
+            <td><%= @contract_basic.is_design_general_contractor %></td>
+            <td><strong>协议有效期：</strong></td>
+            <td></td>
+            <td><strong></strong></td>
+            <td></td>
           </tr>
           <tr>
-            <td><strong>协议适用范围：</strong> </td>
-            <td>
-              <strong><%= t('contracts.project_tag') -%>：</strong>
-              <%= @contract_basic.project_tag %>
-            </td>
+            <td><strong>协议适用范围：</strong></td>
+            <td></td>
+            <td><strong><%= t('contracts.project_tag') -%>：</strong></td>
+            <td><%= @contract_basic.project_tag %></td>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
           </tr>
