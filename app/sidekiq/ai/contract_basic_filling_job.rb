@@ -4,7 +4,7 @@ class AI::ContractBasicFillingJob
 
   def perform(contract_basic_id, field_name)
     contract_basic = ContractBasic.find(contract_basic_id)
-    field_dify_key = Rails.application.credentials.dify_keys[field_name.to_sym]
+    field_dify_key = Rails.application.credentials.dify_basic_keys[field_name.to_sym]
     dify_chat = initialize_dify_chat(field_dify_key)
 
     response = dify_chat.ask "合同数据录入", with: contract_basic.upload_file_id
