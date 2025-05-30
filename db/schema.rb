@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_22_061100) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_30_073915) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -52,6 +52,27 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_22_061100) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "upload_filename"
+  end
+
+  create_table "contract_reviews", force: :cascade do |t|
+    t.bigint "contract_basic_id", null: false
+    t.string "scope_business", comment: "岩土工程设计,市政工程,交通工程设计,勘察,以上都不包含"
+    t.boolean "curtain_wall_cert_usage", comment: "幕墙资质使用"
+    t.boolean "epc_lead_role", comment: "EPC总牵头人"
+    t.boolean "first_payment_prepayment", comment: "首笔预付款"
+    t.boolean "fee_adjustment_downward_only", comment: "费用只调减"
+    t.string "danger_payment_specified", comment: "商业承兑汇票,有追索权的保理,抵房,无追索权的保理,以上都不包含"
+    t.boolean "prohibited_split", comment: "是否违反以下条款：对于大型开发项目或多地块项目，施工图或总包项目要在合同中约定分期开发、分期结算"
+    t.decimal "final_payment_rate", precision: 5, scale: 2, comment: "尾款：施工图审批通过后或立面控制手册完成后收款比例"
+    t.boolean "penalty_staff_replacement", comment: "人员更换罚款"
+    t.decimal "penalty_amount", precision: 12, scale: 2, comment: "罚款金额"
+    t.boolean "work_suspension_prohibited", comment: "禁止暂停工作"
+    t.boolean "liability_cap_twice_contract", comment: "责任上限2倍"
+    t.boolean "cross_contract_penalty_prohibited", comment: "禁止跨合同扣款"
+    t.boolean "liability_clause_keywords", comment: "责任条款字眼:乙方应承担甲方的一切损失,乙方应承担甲方利润,乙方应承担甲方的工程,乙方应承担甲方的间接损失,乙方应承担甲方的维权费用,以上都不包含"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contract_basic_id"], name: "index_contract_reviews_on_contract_basic_id"
   end
 
   create_table "good_events", force: :cascade do |t|
@@ -146,6 +167,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_22_061100) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contract_reviews", "contract_basics"
   add_foreign_key "user_bad_events", "bad_events"
   add_foreign_key "user_bad_events", "users"
   add_foreign_key "user_good_events", "good_events"

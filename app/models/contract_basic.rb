@@ -1,4 +1,6 @@
 class ContractBasic < ApplicationRecord
+  has_one :contract_review, dependent: :destroy
+
   NEED_COMPLETE_FIELDS = [
     :contract_nature,
     :east_boundary,
