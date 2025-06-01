@@ -1,6 +1,6 @@
 GIT
   remote: https://git.thape.com.cn/ai/ruby_llm.git
-  revision: 48484217945fe2de3db875d2ee6a31a2d3fa7ff7
+  revision: 1a5dfe4bb1a175b61418d85831368b1197e8e02c
   branch: dify_api
   specs:
     ruby_llm (1.3.0rc1)
@@ -413,7 +413,7 @@ GEM
       logger (>= 1.6.2)
       rack (>= 3.1.0)
       redis-client (>= 0.23.2)
-    sorbet-runtime (0.5.12135)
+    sorbet-runtime (0.5.12142)
     sshkit (1.24.0)
       base64
       logger
