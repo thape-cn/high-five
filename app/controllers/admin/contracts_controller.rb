@@ -2,7 +2,10 @@ module Admin
   class ContractsController < BaseController
     include DifyChatInitializable
 
-    before_action :set_contract_basic, only: %i[invoke_ai confirm_batch_ai_filling_basic batch_ai_filling_basic confirm_destroy destroy]
+    before_action :set_contract_basic, only: %i[invoke_ai
+      confirm_batch_ai_filling_basic batch_ai_filling_basic
+      confirm_batch_ai_filling_review batch_ai_filling_review
+      confirm_destroy destroy]
 
     def new
       @contract_basic = authorize ContractBasic.new
@@ -48,6 +51,13 @@ module Admin
 
         AI::ContractBasicFillingJob.perform_async(@contract_basic.id, field_name.to_s)
       end
+    end
+
+    def confirm_batch_ai_filling_review
+      render layout: false
+    end
+
+    def batch_ai_filling_review
     end
 
     def confirm_destroy

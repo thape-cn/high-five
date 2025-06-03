@@ -22,3 +22,6 @@ en:
     liability_cap_twice_contract: "The liability for breach of contract should be strictly limited to twice the total amount of this contract, and it is strictly forbidden to associate the amount of liability for breach of contract with the total investment of the project, the amount of the construction contract, and the actual losses of the owner"
     cross_contract_penalty_prohibited: "Cross-contract deductions are prohibited"
     liability_clause_keywords: "Liability clause wording: Party B shall bear all losses of Party A, Party B shall bear the profits of Party A, Party B shall bear Party A's projects, Party B shall bear Party A's indirect losses, Party B shall bear Party A's rights protection expenses, none of the above"
+
+    confirm_batch_ai_filling_review:
+      title: "Confirm batch AI-assisted contract review?"

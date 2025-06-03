@@ -8,6 +8,8 @@ namespace :admin do
       get :confirm_destroy
       get :confirm_batch_ai_filling_basic
       patch :batch_ai_filling_basic
+      get :confirm_batch_ai_filling_review
+      patch :batch_ai_filling_review
     end
   end
   resources :users, only: %i[index edit update new create] do

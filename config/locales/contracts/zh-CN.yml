@@ -32,7 +32,7 @@ zh-CN:
     developer_name: "建设方名称"
     developer_type: "建设方类型"
     confirm_batch_ai_filling_basic:
-      title: "确认批量 AI 填充？"
+      title: "确认批量 AI 填充基本信息？"
     confirm_destroy:
       title: "确认删除合同？"
     invoke_ai:

@@ -22,3 +22,6 @@ zh-CN:
     liability_cap_twice_contract: "违约责任应严格限制在本合同总额的2倍，严禁将违约责任的金额与该项目投资总额、施工合同金额和业主的实际损失进行关联"
     cross_contract_penalty_prohibited: "禁止跨合同扣款"
     liability_clause_keywords: "责任条款字眼:乙方应承担甲方的一切损失,乙方应承担甲方利润,乙方应承担甲方的工程,乙方应承担甲方的间接损失,乙方应承担甲方的维权费用,以上都不包含"
+
+    confirm_batch_ai_filling_review:
+      title: "确认批量 AI 填充合同审核？"

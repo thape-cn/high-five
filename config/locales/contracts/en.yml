@@ -32,7 +32,7 @@ en:
     developer_name: "Developer Name"
     developer_type: "Developer Type"
     confirm_batch_ai_filling_basic:
-      title: "Confirm batch AI filling?"
+      title: "Confirm batch AI filling basic info?"
     confirm_destroy:
       title: "Confirm removed this contract?"
     invoke_ai:
