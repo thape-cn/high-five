@@ -1,0 +1,24 @@
+---
+en:
+  contract_reviews:
+    # Scope of design
+    scope_business: "Does it include the following businesses: geotechnical engineering design, municipal engineering, transportation engineering design, survey, none of the above"
+    curtain_wall_cert_usage: "Curtain wall qualification uses Tianhua's qualification filing"
+    epc_lead_role: "EPC general leader"
+
+    # Design fee related
+    first_payment_prepayment: "Is the first payment a prepayment?"
+    fee_adjustment_downward_only: "Is there a clause stating that the design fee can only be reduced and not increased?"
+    danger_payment_specified: "Commercial acceptance bills, factoring with recourse, mortgage on property, factoring without recourse, none of the above"
+    prohibited_split: "Does it violate the following clause: For large-scale development projects or multi-plot projects, the construction drawings or general contracting projects should stipulate phased development and phased settlement in the contract"
+    final_payment_rate: "Final payment: The proportion of payment after the construction drawings are approved or the facade control manual is completed"
+
+    # Party B's rights
+    penalty_staff_replacement: "Penalty for staff replacement"
+    penalty_amount: "Penalty amount"
+    work_suspension_prohibited: "Shanghai Tianhua is prohibited from suspending work under any circumstances"
+
+    # Breach of contract liability
+    liability_cap_twice_contract: "The liability for breach of contract should be strictly limited to twice the total amount of this contract, and it is strictly forbidden to associate the amount of liability for breach of contract with the total investment of the project, the amount of the construction contract, and the actual losses of the owner"
+    cross_contract_penalty_prohibited: "Cross-contract deductions are prohibited"
+    liability_clause_keywords: "Liability clause wording: Party B shall bear all losses of Party A, Party B shall bear the profits of Party A, Party B shall bear Party A's projects, Party B shall bear Party A's indirect losses, Party B shall bear Party A's rights protection expenses, none of the above"
