@@ -1,7 +1,7 @@
 class ContractBasic < ApplicationRecord
   has_one :contract_review, dependent: :destroy
 
-  NEED_COMPLETE_FIELDS = [
+  NEED_COMPLETE_BASIC_FIELDS = [
     :contract_nature,
     :east_boundary,
     :south_boundary,
@@ -30,6 +30,6 @@ class ContractBasic < ApplicationRecord
   ].freeze
 
   def complete_field_count
-    NEED_COMPLETE_FIELDS.count { |field| self[field].present? }
+    NEED_COMPLETE_BASIC_FIELDS.count { |field| self[field].present? }
   end
 end

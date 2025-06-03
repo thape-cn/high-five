@@ -83,7 +83,7 @@
                 <% end %>
               </td>
               <td>
-                <%= contract.complete_field_count -%> / <%= ContractBasic::NEED_COMPLETE_FIELDS.count -%>
+                <%= contract.complete_field_count -%> / <%= ContractBasic::NEED_COMPLETE_BASIC_FIELDS.count -%>
               </td>
               <td>
                 <%= link_to confirm_batch_ai_filling_admin_contract_path(id: contract.id), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
