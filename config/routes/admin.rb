@@ -6,8 +6,8 @@ namespace :admin do
     member do
       get :invoke_ai
       get :confirm_destroy
-      get :confirm_batch_ai_filling
-      patch :batch_ai_filling
+      get :confirm_batch_ai_filling_basic
+      patch :batch_ai_filling_basic
     end
   end
   resources :users, only: %i[index edit update new create] do

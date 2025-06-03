@@ -25,11 +25,11 @@ class ContractBasicPolicy < ApplicationPolicy
     user.admin?
   end
 
-  def confirm_batch_ai_filling?
+  def confirm_batch_ai_filling_basic?
     user.admin?
   end
 
-  def batch_ai_filling?
+  def batch_ai_filling_basic?
     user.admin?
   end
 
