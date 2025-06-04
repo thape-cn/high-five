@@ -1,6 +1,7 @@
 ---
 en:
   contract_reviews:
+    complete_field_count: "Complete field count"
     # Scope of design
     scope_business: "Does it include the following businesses: geotechnical engineering design, municipal engineering, transportation engineering design, survey, none of the above"
     curtain_wall_cert_usage: "Curtain wall qualification uses Tianhua's qualification filing"

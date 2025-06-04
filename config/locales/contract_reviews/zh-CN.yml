@@ -1,6 +1,7 @@
 ---
 zh-CN:
   contract_reviews:
+    complete_field_count: "合同审查字段数量"
     # 设计范围
     scope_business: "是否包含如下业务：岩土工程设计,市政工程,交通工程设计,勘察,以上都不包含"
     curtain_wall_cert_usage: "幕墙资质使用天华资质备案"
