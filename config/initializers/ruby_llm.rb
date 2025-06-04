@@ -32,8 +32,8 @@ RubyLLM.configure do |config|
   config.default_image_model = "dall-e-3"            # Default: 'dall-e-3'
 
   # --- Connection Settings ---
-  config.request_timeout = 120  # Request timeout in seconds (default: 120)
-  config.max_retries = 3        # Max retries on transient network errors (default: 3)
+  config.request_timeout = 180  # Request timeout in seconds (default: 120)
+  config.max_retries = 2        # Max retries on transient network errors (default: 3)
   config.retry_interval = 0.1 # Initial delay in seconds (default: 0.1)
   config.retry_backoff_factor = 2 # Multiplier for subsequent retries (default: 2)
   config.retry_interval_randomness = 0.5 # Jitter factor (default: 0.5)
