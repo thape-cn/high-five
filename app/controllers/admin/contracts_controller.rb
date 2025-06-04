@@ -58,6 +58,13 @@ module Admin
     end
 
     def batch_ai_filling_review
+      @contract_basic.create_contract_review if @contract_basic.contract_review.blank?
+      contract_review = @contract_basic.contract_review
+      ContractReview::NEED_COMPLETE_REVIEW_FIELDS.each do |field_name|
+        next if contract_review[field_name].present?
+
+        AI::ContractReviewFillingJob.perform_async(contract_review.id, field_name.to_s)
+      end
     end
 
     def confirm_destroy
