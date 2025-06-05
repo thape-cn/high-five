@@ -14,7 +14,7 @@
   </ol>
 <% end %>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center" data-controller="popover">
   <div class="col-lg-12">
     <div class="row">
       <div class="col-sm-6 col-lg-3">
@@ -54,31 +54,46 @@
             <tr>
               <td><%= link_to contract.upload_filename, admin_contract_path(id: contract.upload_file_id) -%></td>
               <td>
-                <%= split_think_value(contract.contract_type)[1] -%>
+                <% think, value = split_think_value(contract.contract_type) %>
+                <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                  <%= value -%>
+                </span>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :contract_type), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
               </td>
               <td>
-                <%= split_think_value(contract.contract_nature)[1] -%>
+                <% think, value = split_think_value(contract.contract_nature) %>
+                <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                  <%= value -%>
+                </span>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :contract_nature), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
               </td>
               <td>
-                <%= split_think_value(contract.contract_name)[1] -%>
+                <% think, value = split_think_value(contract.contract_name) %>
+                <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                  <%= value -%>
+                </span>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :contract_name), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
               </td>
               <td>
-                <%= split_think_value(contract.party_a)[1] -%>
+                <% think, value = split_think_value(contract.party_a) %>
+                <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                  <%= value -%>
+                </span>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :party_a), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
               </td>
               <td>
-                <%= split_think_value(contract.party_b)[1] -%>
+                <% think, value = split_think_value(contract.party_b) %>
+                <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                  <%= value -%>
+                </span>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :party_b), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
