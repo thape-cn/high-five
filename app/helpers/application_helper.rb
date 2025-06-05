@@ -25,7 +25,7 @@ module ApplicationHelper
     think_content = s_val[idx_after_open_tag...start_close_tag_idx].strip
 
     idx_after_close_tag = start_close_tag_idx + think_close_tag.length
-    result = s_val[idx_after_close_tag..-1].strip
+    result = s_val[idx_after_close_tag..].strip
 
     [think_content, result]
   end
