@@ -54,31 +54,31 @@
             <tr>
               <td><%= link_to contract.upload_filename, admin_contract_path(id: contract.upload_file_id) -%></td>
               <td>
-                <%= contract.contract_type -%>
+                <%= split_think_value(contract.contract_type)[1] -%>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :contract_type), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
               </td>
               <td>
-                <%= contract.contract_nature -%>
+                <%= split_think_value(contract.contract_nature)[1] -%>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :contract_nature), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
               </td>
               <td>
-                <%= contract.contract_name -%>
+                <%= split_think_value(contract.contract_name)[1] -%>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :contract_name), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
               </td>
               <td>
-                <%= contract.party_a -%>
+                <%= split_think_value(contract.party_a)[1] -%>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :party_a), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
               </td>
               <td>
-                <%= contract.party_b -%>
+                <%= split_think_value(contract.party_b)[1] -%>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :party_b), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-golf-alt', %w[icon icon-lg]) -%>
                 <% end %>
