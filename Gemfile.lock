@@ -103,7 +103,7 @@ GEM
     bcrypt_pbkdf (1.1.1-arm64-darwin)
     bcrypt_pbkdf (1.1.1-x86_64-darwin)
     benchmark (0.4.1)
-    bigdecimal (3.2.1)
+    bigdecimal (3.2.2)
     bindata (2.5.1)
     bindex (0.8.1)
     browser (6.2.0)
@@ -297,7 +297,7 @@ GEM
     pundit (2.5.0)
       activesupport (>= 3.0.0)
     racc (1.8.1)
-    rack (3.1.15)
+    rack (3.1.16)
     rack-oauth2 (2.2.1)
       activesupport
       attr_required
