@@ -43,13 +43,33 @@
           </tr>
           <tr>
             <td><strong><%= t('contracts.east_boundary') -%>：</strong></td>
-            <td><%= @contract_basic.east_boundary %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.east_boundary) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.south_boundary') -%>：</strong></td>
-            <td><%= @contract_basic.south_boundary %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.south_boundary) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.west_boundary') -%>：</strong></td>
-            <td><%= @contract_basic.west_boundary %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.west_boundary) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.north_boundary') -%>：</strong></td>
-            <td><%= @contract_basic.north_boundary %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.north_boundary) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
           </tr>
           <tr>
             <td><strong>合同编号</strong></td>
@@ -62,19 +82,44 @@
               </span>
             </td>
             <td><strong><%= t('contracts.project_land_use_nature') -%></strong></td>
-            <td><%= @contract_basic.project_land_use_nature %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.project_land_use_nature) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong>线索提供人</strong></td>
             <td></td>
           </tr>
           <tr>
             <td><strong><%= t('contracts.currency') -%>：</strong></td>
-            <td><%= @contract_basic.currency %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.currency) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.contract_amount') -%>:</strong></td>
-            <td><%= @contract_basic.contract_amount %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.contract_amount) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.split_contract_amount') -%>:</strong></td>
-            <td><%= @contract_basic.split_contract_amount %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.split_contract_amount) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.actual_contract_amount') -%>：</strong></td>
-            <td><%= @contract_basic.actual_contract_amount %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.actual_contract_amount) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
           </tr>
           <tr>
             <td><strong><%= t('contracts.party_a') -%>：</strong></td>
@@ -103,9 +148,19 @@
               </span>
             </td>
             <td><strong><%= t('contracts.scale_type') -%>：</strong></td>
-            <td><%= @contract_basic.scale_type %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.scale_type) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.scale_area') -%>：</strong></td>
-            <td><%= @contract_basic.scale_area %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.scale_area) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
           </tr>
           <tr>
             <td><strong>商务责任公司：</strong></td>
@@ -135,9 +190,19 @@
           </tr>
           <tr>
             <td><strong><%= t('contracts.is_epc') -%>:</strong></td>
-            <td><%= @contract_basic.is_epc %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.is_epc) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.is_design_general_contractor') -%>：</strong></td>
-            <td><%= @contract_basic.is_design_general_contractor %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.is_design_general_contractor) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong>协议有效期：</strong></td>
             <td></td>
             <td><strong></strong></td>
@@ -147,17 +212,42 @@
             <td><strong>协议适用范围：</strong></td>
             <td></td>
             <td><strong><%= t('contracts.project_tag') -%>：</strong></td>
-            <td><%= @contract_basic.project_tag %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.project_tag) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.quotation_method') -%>：</strong></td>
-            <td><%= @contract_basic.quotation_method %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.quotation_method) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.construction_and_installation_fee') -%>：</strong></td>
-            <td><%= @contract_basic.construction_and_installation_fee %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.construction_and_installation_fee) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
           </tr>
           <tr>
             <td><strong><%= t('contracts.discount_rate') -%>：</strong></td>
-            <td><%= @contract_basic.discount_rate %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.discount_rate) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td><strong><%= t('contracts.developer_type') -%>：</strong></td>
-            <td><%= @contract_basic.developer_type %></td>
+            <td>
+              <% think, value = split_think_value(@contract_basic.developer_type) %>
+              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+                <%= value -%>
+              </span>
+            </td>
             <td></td>
             <td></td>
             <td></td>
