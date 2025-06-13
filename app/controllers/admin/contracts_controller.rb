@@ -15,7 +15,7 @@ module Admin
     def create
       file = contract_params[:file]
       dify_chat = initialize_dify_chat
-      response = dify_chat.upload_document(file)
+      response = dify_chat.provider.upload_document(file)
       if response.status == 201
         upload_file_id = response.body[:id]
         upload_filename = response.body[:name]
