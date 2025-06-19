@@ -11,6 +11,7 @@ class AI::ContractBasicFillingJob
     response = dify_chat.ask "合同数据录入", with: contract_basic.upload_file_id do |chunk|
       ActionCable.server.broadcast "llm_channel", {id: dom_id(contract_basic, field_name), content: chunk.content}
     end
+    ActionCable.server.broadcast "llm_channel", {command: "reload"}
     Rails.logger.info "log in ContractBasicFillingJob #{field_name} with #{contract_basic.upload_file_id}: #{response.content}"
 
     contract_basic.update_attribute(field_name, response.content)
