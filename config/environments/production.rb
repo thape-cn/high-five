@@ -61,8 +61,6 @@ Rails.application.configure do
   # Set host to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = {host: "example.com"}
 
-  # Configure Action Cable URL for AnyCable WebSocket server in production
-  config.action_cable.url = ENV.fetch("CABLE_URL") { "/cable" }
   # If your AnyCable WebSocket server is on a different host or port:
   # config.action_cable.url = ENV.fetch("CABLE_URL") { "wss://example.com/cable" }
   # config.action_cable.allowed_request_origins = [ ENV.fetch("CABLE_ALLOWED_ORIGIN") { "https://example.com" } ]
