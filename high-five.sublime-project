@@ -4,9 +4,9 @@
 		{
       "path": ".",
       "folder_exclude_patterns": [".bundle",".ruby-lsp",".vscode",".idea",".capistrano","log","tmp",
-                                  "node_modules", "public/packs", "public/packs-test", "public/assets"],
+                                  "node_modules", "public/packs", "public/packs-test", "public/assets", ".aider.tags.cache.v4"],
       "file_exclude_patterns": ["*.sublime-workspace",".DS_Store","config/master.key",
-                                "config/credentials.yml.enc"]
+                                "config/credentials.yml.enc",".aider*"]
     },
     {
       "path": "./node_modules/@coreui/coreui",
