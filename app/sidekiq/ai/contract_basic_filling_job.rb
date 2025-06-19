@@ -1,4 +1,5 @@
 class AI::ContractBasicFillingJob
+  include ActionView::RecordIdentifier
   include Sidekiq::Job
   include DifyChatInitializable
 
@@ -8,7 +9,7 @@ class AI::ContractBasicFillingJob
     dify_chat = initialize_dify_chat(field_dify_key)
 
     response = dify_chat.ask "合同数据录入", with: contract_basic.upload_file_id do |chunk|
-      ActionCable.server.broadcast "llm_channel", {id: contract_basic.id, field_name: field_name, content: chunk.content}
+      ActionCable.server.broadcast "llm_channel", {id: dom_id(contract_basic, field_name), content: chunk.content}
     end
     Rails.logger.info "log in ContractBasicFillingJob #{field_name} with #{contract_basic.upload_file_id}: #{response.content}"
 
