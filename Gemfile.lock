@@ -412,6 +412,8 @@ GEM
     rdoc (6.14.1)
       erb
       psych (>= 4.0.0)
+    redis (5.4.0)
+      redis-client (>= 0.22.0)
     redis-client (0.25.0)
       connection_pool
     regexp_parser (2.10.0)
@@ -469,7 +471,7 @@ GEM
       logger (>= 1.6.2)
       rack (>= 3.1.0)
       redis-client (>= 0.23.2)
-    sorbet-runtime (0.5.12189)
+    sorbet-runtime (0.5.12194)
     sshkit (1.24.0)
       base64
       logger
@@ -563,6 +565,7 @@ DEPENDENCIES
   puma
   pundit
   rails (~> 8.0.1)
+  redis
   ruby-lsp
   ruby-lsp-rails
   ruby_llm!

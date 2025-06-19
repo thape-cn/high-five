@@ -17,6 +17,7 @@ gem "shakapacker", "~> 8.2"
 
 # Use AnyCable for Action Cable
 gem "anycable-rails"
+gem "redis"
 
 gem "jbuilder"
 
