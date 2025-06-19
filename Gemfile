@@ -15,6 +15,9 @@ gem "puma"
 
 gem "shakapacker", "~> 8.2"
 
+# Use AnyCable for Action Cable
+gem "anycable-rails"
+
 gem "jbuilder"
 
 # bundle config local.ruby_llm /Users/$(whoami)/git/oss/ruby_llm/
