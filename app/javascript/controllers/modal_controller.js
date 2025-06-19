@@ -12,17 +12,19 @@ export default class extends Controller {
       if (response.ok) {
         const result_text = response.text;
         result_text.then(result => {
-          const htmlContent = document.getElementById('coreuiModal');
-          htmlContent.innerHTML = result;
-          const modal = new coreui.Modal('#coreuiModal');
-          modal.show();
-          htmlContent.addEventListener('hidden.coreui.modal', event => {
-            if(this.pageReloadValue) {
-              location.reload();
-            } else {
-              this.dispatch("reloadDT", { detail: {} });
-            }
-          });
+          if (result != "") {
+            const htmlContent = document.getElementById('coreuiModal');
+            htmlContent.innerHTML = result;
+            const modal = new coreui.Modal('#coreuiModal');
+            modal.show();
+            htmlContent.addEventListener('hidden.coreui.modal', event => {
+              if(this.pageReloadValue) {
+                location.reload();
+              } else {
+                this.dispatch("reloadDT", { detail: {} });
+              }
+            });
+          }
         });
       }
     });
