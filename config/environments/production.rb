@@ -65,7 +65,6 @@ Rails.application.configure do
   # config.action_cable.url = ENV.fetch("CABLE_URL") { "wss://example.com/cable" }
   # config.action_cable.allowed_request_origins = [ ENV.fetch("CABLE_ALLOWED_ORIGIN") { "https://example.com" } ]
 
-
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   # config.action_mailer.smtp_settings = {
   #   user_name: Rails.application.credentials.dig(:smtp, :user_name),
