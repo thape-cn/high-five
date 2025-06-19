@@ -10,6 +10,20 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
+"@anycable/core@^1.1.0":
+  version "1.1.2"
+  resolved "https://registry.npmmirror.com/@anycable/core/-/core-1.1.2.tgz#c15906de72705f474a2ee88f54558451478fb082"
+  integrity sha512-la6KckUffL9lokpHlr4yBFeq07XM3asRlbhLEpsMdZDWbjFsmC7RPxmIBGg6dI8b/GwmHDNMHx8bsGXOcBpRag==
+  dependencies:
+    nanoevents "^9.1.0"
+
+"@anycable/web@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/@anycable/web/-/web-1.1.0.tgz#e6c49aea6d183d3d8c4ff835cf0048f9eecb6e84"
+  integrity sha512-9PQKW0xZ6zBQR9xqRZELP1POEOw1IYpgPuDSEcpQFH6z5yUAMMMnqhfQBG4GCtnSmAGot6SnItjgCqFJWxhf6Q==
+  dependencies:
+    "@anycable/core" "^1.1.0"
+
 "@babel/code-frame@^7.27.1":
   version "7.27.1"
   resolved "https://registry.npmmirror.com/@babel/code-frame/-/code-frame-7.27.1.tgz#200f715e66d52a23b221a9435534a91cc13ad5be"
@@ -2860,6 +2874,11 @@ multicast-dns@^7.2.5:
   dependencies:
     dns-packet "^5.2.2"
     thunky "^1.0.2"
+
+nanoevents@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.npmmirror.com/nanoevents/-/nanoevents-9.1.0.tgz#76c8c86ed54a26131ada5a0a1c5682f48690dbb7"
+  integrity sha512-Jd0fILWG44a9luj8v5kED4WI+zfkkgwKyRQKItTtlPfEsh7Lznfi1kr8/iZ+XAIss4Qq5GqRB0qtWbaz9ceO/A==
 
 nanoid@^3.3.11:
   version "3.3.11"
