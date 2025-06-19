@@ -16,14 +16,14 @@
             <td><strong><%= t('contracts.contract_type') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.contract_type) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :contract_type) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.contract_nature') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.contract_nature) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :contract_nature) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
@@ -46,28 +46,28 @@
             <td><strong><%= t('contracts.east_boundary') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.east_boundary) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :east_boundary) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.south_boundary') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.south_boundary) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :south_boundary) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.west_boundary') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.west_boundary) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :west_boundary) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.north_boundary') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.north_boundary) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :north_boundary) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
@@ -78,14 +78,14 @@
             <td><strong><%= t('contracts.contract_name') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.contract_name) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :contract_name) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.project_land_use_nature') -%></strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.project_land_use_nature) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :project_land_use_nature) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
@@ -96,28 +96,28 @@
             <td><strong><%= t('contracts.currency') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.currency) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :currency) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.contract_amount') -%>:</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.contract_amount) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :contract_amount) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.split_contract_amount') -%>:</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.split_contract_amount) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :split_contract_amount) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.actual_contract_amount') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.actual_contract_amount) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :actual_contract_amount) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
@@ -126,14 +126,14 @@
             <td><strong><%= t('contracts.party_a') -%>：</strong></td>
             <td colspan="3">
               <% think, value = split_think_value(@contract_basic.party_a) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :party_a) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.party_b') -%>：</strong></td>
             <td colspan="3">
               <% think, value = split_think_value(@contract_basic.party_b) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :party_b) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
@@ -144,21 +144,21 @@
             <td><strong><%= t('contracts.developer_name') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.developer_name) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :developer_name) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.scale_type') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.scale_type) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :scale_type) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.scale_area') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.scale_area) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :scale_area) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
@@ -177,14 +177,14 @@
             <td><strong><%= t('contracts.beneficiary_bank_account') -%>：</strong></td>
             <td colspan="3">
               <% think, value = split_think_value(@contract_basic.beneficiary_bank_account) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :beneficiary_bank_account) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.beneficiary_bank') -%>：</strong></td>
             <td colspan="3">
               <% think, value = split_think_value(@contract_basic.beneficiary_bank) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :beneficiary_bank) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
@@ -193,14 +193,14 @@
             <td><strong><%= t('contracts.is_epc') -%>:</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.is_epc) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :is_epc) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.is_design_general_contractor') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.is_design_general_contractor) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :is_design_general_contractor) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
@@ -215,21 +215,21 @@
             <td><strong><%= t('contracts.project_tag') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.project_tag) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :project_tag) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.quotation_method') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.quotation_method) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :quotation_method) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.construction_and_installation_fee') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.construction_and_installation_fee) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :construction_and_installation_fee) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
@@ -238,14 +238,14 @@
             <td><strong><%= t('contracts.discount_rate') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.discount_rate) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :discount_rate) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
             <td><strong><%= t('contracts.developer_type') -%>：</strong></td>
             <td>
               <% think, value = split_think_value(@contract_basic.developer_type) %>
-              <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+              <span id="<%= dom_id(@contract_basic, :developer_type) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
             </td>
@@ -261,7 +261,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.scope_business) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :scope_business) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -272,7 +272,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.curtain_wall_cert_usage) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :curtain_wall_cert_usage) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -283,7 +283,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.epc_lead_role) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :epc_lead_role) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -294,7 +294,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.first_payment_prepayment) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :first_payment_prepayment) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -305,7 +305,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.fee_adjustment_downward_only) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :fee_adjustment_downward_only) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -316,7 +316,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.danger_payment_specified) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :danger_payment_specified) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -327,7 +327,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.prohibited_split) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :prohibited_split) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -338,7 +338,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.final_payment_rate) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :final_payment_rate) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -349,7 +349,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.penalty_staff_replacement) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :penalty_staff_replacement) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -360,7 +360,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.penalty_amount) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :penalty_amount) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -371,7 +371,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.work_suspension_prohibited) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :work_suspension_prohibited) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -382,7 +382,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.liability_cap_twice_contract) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :liability_cap_twice_contract) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -393,7 +393,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.cross_contract_penalty_prohibited) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :cross_contract_penalty_prohibited) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
@@ -404,7 +404,7 @@
         <div class="card-body">
           <% think, value = split_think_value(@contract_basic.contract_review.liability_clause_keywords) %>
           <p class="card-text">
-            <span class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
+            <span id="<%= dom_id(@contract_basic, :liability_clause_keywords) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
               <%= value -%>
             </span>
           </p>
