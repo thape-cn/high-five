@@ -6,8 +6,11 @@
 	],
 	"settings": {
 		"files.exclude": {
+			"**/.aider*": true,
 			"**/.bundle": true,
 			"**/.idea": true,
+			"**/high-five.sublime-project": true,
+			"**/high-five.sublime-workspace": true,
 			"**/log": true,
 			"**/node_modules": true,
 			"**/tmp": true
