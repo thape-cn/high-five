@@ -29,4 +29,4 @@ test:
 
 production:
   <<: *default
-  http_broadcast_url: "https://pgac.redwoodjs.cn:8090/_broadcast"
+  http_broadcast_url: "https://high-five.thape.com.cn:8090/_broadcast"

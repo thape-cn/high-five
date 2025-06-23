@@ -1,0 +1,17 @@
+[Unit]
+Description=AnyCable gRPC Server for high-five
+After=syslog.target network.target
+
+[Service]
+Type=simple
+Environment=RAILS_ENV=production
+WorkingDirectory=/var/www/high_five/current
+ExecStart=/home/high_five/.rbenv/bin/rbenv exec bundle exec anycable
+ExecStop=/bin/kill -TERM $MAINPID
+User=high_five
+RestartSec=9
+Restart=on-failure
+
+
+[Install]
+WantedBy=multi-user.target

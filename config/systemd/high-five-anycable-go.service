@@ -1,0 +1,19 @@
+[Unit]
+Description=anycable-go for high-five
+After=syslog.target network.target
+
+[Service]
+Type=simple
+Environment=ANYCABLE_HOST=high-five.thape.com.cn
+Environment=ANYCABLE_PORT=3334
+Environment=ANYCABLE_PATH=/cable
+Environment=ANYCABLE_METRICS_HTTP=/metrics
+WorkingDirectory=/var/www/high_five/current
+ExecStart=/usr/local/bin/anycable-go --ssl_cert=/etc/ssl/cert/STAR_thape_com_cn_integrated.crt --ssl_key=/etc/ssl/private/STAR_thape_com_cn.key --broadcast_adapter=http --rpc_impl=grpc
+ExecStop=/bin/kill -TERM $MAINPID
+User=high_five
+LimitNOFILE=16384 # increase open files limit (see OS Tuning guide)
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
