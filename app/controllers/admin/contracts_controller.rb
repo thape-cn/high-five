@@ -29,7 +29,10 @@ module Admin
 
     def invoke_ai
       field_name = params["field_name"]
-      AI::ContractBasicFillingJob.perform_async(@contract_basic.id, field_name.to_s)
+      case params["category"]
+      when "basic"
+        AI::ContractBasicFillingJob.perform_async(@contract_basic.id, field_name.to_s)
+      end
       head :no_content
     end
 
