@@ -1,18 +1,19 @@
 [Unit]
-Description=Puma HTTP Server for rails_starter (production)
+Description=Puma HTTP Server for high_five (production)
 After=network.target
 
 [Service]
 Type=simple
-User=rails_starter
-WorkingDirectory=/var/www/rails_starter/current
+User=high_five
+Environment=CABLE_URL=wss://high-five.thape.com.cn:3334/cable
+WorkingDirectory=/var/www/high_five/current
 
 # Support older bundler versions where file descriptors weren't kept
 # See https://github.com/rubygems/rubygems/issues/3254
-ExecStart=/home/rails_starter/.rbenv/bin/rbenv exec bundle exec --keep-file-descriptors puma -C /var/www/rails_starter/shared/puma.rb
+ExecStart=/home/high_five/.rbenv/bin/rbenv exec bundle exec --keep-file-descriptors puma -C /var/www/high_five/shared/puma.rb
 ExecReload=/bin/kill -USR1 $MAINPID
-StandardOutput=append:/var/www/rails_starter/shared/log/puma_access.log
-StandardError=append:/var/www/rails_starter/shared/log/puma_error.log
+StandardOutput=append:/var/www/high_five/shared/log/puma_access.log
+StandardError=append:/var/www/high_five/shared/log/puma_error.log
 
 Restart=always
 RestartSec=10
