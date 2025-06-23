@@ -29,6 +29,9 @@
               <span id="<%= dom_id(@contract_basic, :contract_nature) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :contract_nature), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong>主合同编号</strong></td>
             <td></td>
@@ -52,6 +55,9 @@
               <span id="<%= dom_id(@contract_basic, :east_boundary) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :east_boundary), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.south_boundary') -%>：</strong></td>
             <td>
@@ -59,6 +65,9 @@
               <span id="<%= dom_id(@contract_basic, :south_boundary) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :south_boundary), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.west_boundary') -%>：</strong></td>
             <td>
@@ -66,6 +75,9 @@
               <span id="<%= dom_id(@contract_basic, :west_boundary) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :west_boundary), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.north_boundary') -%>：</strong></td>
             <td>
@@ -73,6 +85,9 @@
               <span id="<%= dom_id(@contract_basic, :north_boundary) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :north_boundary), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
           </tr>
           <tr>
@@ -84,6 +99,9 @@
               <span id="<%= dom_id(@contract_basic, :contract_name) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :contract_name), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.project_land_use_nature') -%></strong></td>
             <td>
@@ -91,6 +109,9 @@
               <span id="<%= dom_id(@contract_basic, :project_land_use_nature) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :project_land_use_nature), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong>线索提供人</strong></td>
             <td></td>
@@ -102,6 +123,9 @@
               <span id="<%= dom_id(@contract_basic, :currency) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :currency), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.contract_amount') -%>:</strong></td>
             <td>
@@ -109,6 +133,9 @@
               <span id="<%= dom_id(@contract_basic, :contract_amount) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :contract_amount), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.split_contract_amount') -%>:</strong></td>
             <td>
@@ -116,6 +143,9 @@
               <span id="<%= dom_id(@contract_basic, :split_contract_amount) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :split_contract_amount), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.actual_contract_amount') -%>：</strong></td>
             <td>
@@ -123,6 +153,9 @@
               <span id="<%= dom_id(@contract_basic, :actual_contract_amount) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :actual_contract_amount), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
           </tr>
           <tr>
@@ -132,6 +165,9 @@
               <span id="<%= dom_id(@contract_basic, :party_a) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :party_a), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.party_b') -%>：</strong></td>
             <td colspan="3">
@@ -139,6 +175,9 @@
               <span id="<%= dom_id(@contract_basic, :party_b) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :party_b), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
           </tr>
           <tr>
@@ -150,6 +189,9 @@
               <span id="<%= dom_id(@contract_basic, :developer_name) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :developer_name), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.scale_type') -%>：</strong></td>
             <td>
@@ -157,6 +199,9 @@
               <span id="<%= dom_id(@contract_basic, :scale_type) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :scale_type), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.scale_area') -%>：</strong></td>
             <td>
@@ -164,6 +209,9 @@
               <span id="<%= dom_id(@contract_basic, :scale_area) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :scale_area), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
           </tr>
           <tr>
@@ -183,6 +231,9 @@
               <span id="<%= dom_id(@contract_basic, :beneficiary_bank_account) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :beneficiary_bank_account), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.beneficiary_bank') -%>：</strong></td>
             <td colspan="3">
@@ -190,6 +241,9 @@
               <span id="<%= dom_id(@contract_basic, :beneficiary_bank) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :beneficiary_bank), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
           </tr>
           <tr>
@@ -199,6 +253,9 @@
               <span id="<%= dom_id(@contract_basic, :is_epc) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :is_epc), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.is_design_general_contractor') -%>：</strong></td>
             <td>
@@ -206,6 +263,9 @@
               <span id="<%= dom_id(@contract_basic, :is_design_general_contractor) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :is_design_general_contractor), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong>协议有效期：</strong></td>
             <td></td>
@@ -221,6 +281,9 @@
               <span id="<%= dom_id(@contract_basic, :project_tag) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :project_tag), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.quotation_method') -%>：</strong></td>
             <td>
@@ -228,6 +291,9 @@
               <span id="<%= dom_id(@contract_basic, :quotation_method) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :quotation_method), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.construction_and_installation_fee') -%>：</strong></td>
             <td>
@@ -235,6 +301,9 @@
               <span id="<%= dom_id(@contract_basic, :construction_and_installation_fee) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :construction_and_installation_fee), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
           </tr>
           <tr>
@@ -244,6 +313,9 @@
               <span id="<%= dom_id(@contract_basic, :discount_rate) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :discount_rate), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td><strong><%= t('contracts.developer_type') -%>：</strong></td>
             <td>
@@ -251,6 +323,9 @@
               <span id="<%= dom_id(@contract_basic, :developer_type) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                 <%= value -%>
               </span>
+              <%= link_to invoke_ai_admin_contract_path(id: @contract_basic.id, field_name: :developer_type), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
+                <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
+              <% end %>
             </td>
             <td></td>
             <td></td>
