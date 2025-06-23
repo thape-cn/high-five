@@ -1,7 +1,9 @@
 class AI::ContractBasicFillingJob
   include ActionView::RecordIdentifier
+  include ActionView::Helpers::TagHelper
   include Sidekiq::Job
   include DifyChatInitializable
+  include SplitThinkValueHelper
 
   def perform(contract_basic_id, field_name)
     contract_basic = ContractBasic.find(contract_basic_id)
@@ -11,7 +13,13 @@ class AI::ContractBasicFillingJob
     response = dify_chat.ask "合同数据录入", with: contract_basic.upload_file_id do |chunk|
       ActionCable.server.broadcast "llm_channel", {id: dom_id(contract_basic, field_name), content: chunk.content}
     end
-    ActionCable.server.broadcast "llm_channel", {command: "reload"}
+    think, value = split_think_value(response.content)
+    ActionCable.server.broadcast "llm_channel", {command: "replace", id: dom_id(contract_basic, field_name), html:
+      content_tag(:span, value,
+        id: dom_id(contract_basic, field_name),
+        data: {'coreui-container': 'body', 'coreui-toggle': 'popover', 'coreui-placement': 'top', 'coreui-content': think},
+        class: "think_value")
+    }
     Rails.logger.info "log in ContractBasicFillingJob #{field_name} with #{contract_basic.upload_file_id}: #{response.content}"
 
     contract_basic.update_attribute(field_name, response.content)

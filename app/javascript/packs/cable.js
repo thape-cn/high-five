@@ -11,8 +11,9 @@ cable.subscriptions.create("LLMChannel", {
   },
 
   received: function(data) {
-    if (data['command'] == 'reload') {
-      window.location.reload();
+    if (data['command'] == 'replace') {
+      const span = document.getElementById(data['id']);
+      span.outerHTML = data['html'];
     } else {
       const span = document.getElementById(data['id']);
       if (span && data['content'] === null) {

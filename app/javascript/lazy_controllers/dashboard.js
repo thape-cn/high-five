@@ -49,7 +49,6 @@ Stimulus.register("dashboard", class extends Controller {
   }
 
   connect() {
-    console.log(this.labelsValue, this.dataValue);
     this.cardChart = new Chart(this.cardChartTarget, {
       type: 'line',
       data: {
