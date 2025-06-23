@@ -17,9 +17,8 @@ class AI::ContractBasicFillingJob
     ActionCable.server.broadcast "llm_channel", {command: "replace", id: dom_id(contract_basic, field_name), html:
       content_tag(:span, value,
         id: dom_id(contract_basic, field_name),
-        data: {'coreui-container': 'body', 'coreui-toggle': 'popover', 'coreui-placement': 'top', 'coreui-content': think},
-        class: "think_value")
-    }
+        data: {"coreui-container": "body", "coreui-toggle": "popover", "coreui-placement": "top", "coreui-content": think},
+        class: "think_value")}
     Rails.logger.info "log in ContractBasicFillingJob #{field_name} with #{contract_basic.upload_file_id}: #{response.content}"
 
     contract_basic.update_attribute(field_name, response.content)
