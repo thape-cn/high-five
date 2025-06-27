@@ -31,7 +31,7 @@ module Admin
       field_name = params["field_name"]
       case params["category"]
       when "basic"
-        AI::ContractBasicFillingJob.perform_async(@contract_basic.id, field_name.to_s)
+        AI::ContractBasicFillingJob.perform_in(1.second, @contract_basic.id, field_name.to_s)
       end
       head :no_content
     end
@@ -44,7 +44,7 @@ module Admin
       ContractBasic::NEED_COMPLETE_BASIC_FIELDS.each do |field_name|
         next if @contract_basic[field_name].present?
 
-        AI::ContractBasicFillingJob.perform_async(@contract_basic.id, field_name.to_s)
+        AI::ContractBasicFillingJob.perform_in(1.second, @contract_basic.id, field_name.to_s)
       end
     end
 
