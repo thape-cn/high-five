@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "auth/openid_connect/callback" => "openid_connect#callback"
 
   draw :admin
+  draw :api
 
   namespace :ui do
     resource :avatar_area, only: %i[show]

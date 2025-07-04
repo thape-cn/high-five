@@ -15,4 +15,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym "UI"
   inflect.acronym "AI"
   inflect.acronym "LLM"
+  inflect.acronym "API"
 end
