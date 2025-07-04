@@ -19,7 +19,9 @@ module Admin
       if response.status == 201
         upload_file_id = response.body[:id]
         upload_filename = response.body[:name]
-        authorize ContractBasic.create(upload_file_id:, upload_filename:)
+        contract_basic = ContractBasic.create(upload_file_id:, upload_filename:)
+        contract_basic.create_contract_review
+        authorize contract_basic
       end
     end
 
@@ -53,7 +55,6 @@ module Admin
     end
 
     def batch_ai_filling_review
-      @contract_basic.create_contract_review if @contract_basic.contract_review.blank?
       contract_review = @contract_basic.contract_review
       ContractReview::NEED_COMPLETE_REVIEW_FIELDS.each do |field_name|
         next if contract_review[field_name].present?

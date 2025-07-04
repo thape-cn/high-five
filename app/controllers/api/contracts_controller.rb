@@ -29,6 +29,7 @@ module API
           upload_file_id: upload_file_id,
           upload_filename: upload_filename
         )
+        contract_basic.create_contract_review
 
         render json: {
           is_success: true,
