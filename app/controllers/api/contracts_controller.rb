@@ -1,13 +1,14 @@
 module API
   class ContractsController < ActionController::Base
     include DifyChatInitializable
-
+    skip_before_action :verify_authenticity_token
     before_action :check_internal_ip, only: [:update, :show, :basic, :review]
     before_action :load_contract, only: [:show, :basic, :review]
 
     def update
       bpm_id = params[:id]
-      files_info = contract_params[:files_info]
+      # Handle both top-level files_info and nested contract[:files_info]
+      files_info = contract_params[:files_info].presence || contract_params.dig(:contract, :files_info)
 
       if bpm_id.blank?
         return render json: {is_success: false, error_message: "ID 不能为空"}, status: :bad_request
@@ -59,7 +60,7 @@ module API
     end
 
     def contract_params
-      params.permit(:id, :files_info)
+      params.permit(:id, files_info: [:SALESCONTRACTID, :ID, :ENCLOSURENAME, :ATTACHMENTADDRESS, :UPLOADTIME], contract: {files_info: [:SALESCONTRACTID, :ID, :ENCLOSURENAME, :ATTACHMENTADDRESS, :UPLOADTIME]})
     end
   end
 end
