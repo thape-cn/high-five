@@ -1,7 +1,3 @@
-json.bpm_id contract_basic.bpm_id
-json.upload_file_id contract_basic.upload_file_id
-json.upload_filename contract_basic.upload_filename
-
 think, value = API::ContractsController.helpers.split_think_value(contract_basic.contract_type)
 json.contract_type_think think
 json.contract_type value
