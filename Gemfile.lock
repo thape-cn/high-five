@@ -556,6 +556,7 @@ DEPENDENCIES
   devise
   devise-i18n
   ed25519
+  faraday
   jbuilder
   meta-tags
   omniauth_openid_connect

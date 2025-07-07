@@ -21,7 +21,7 @@ module API
       contract_basic.contract_files.destroy_all
       files_info.each do |file_url|
         contract_file = contract_basic.contract_files.create(file_id: file_url["ID"], attachment_address: file_url["ATTACHMENTADDRESS"], enclosure_name: file_url["ENCLOSURENAME"])
-        file_content = HTTParty.get(file_url["ATTACHMENTADDRESS"])
+        file_content = Faraday.get(file_url["ATTACHMENTADDRESS"])
         dify_chat = initialize_dify_chat
         response = dify_chat.provider.upload_document(file_content)
         if response.status == 201
