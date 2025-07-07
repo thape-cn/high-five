@@ -2,9 +2,10 @@ module API
   class ContractsController < ActionController::Base
     include DifyChatInitializable
 
-    def update
-      return render json: {is_success: false, error_message: "此 API 仅允许内网调用。"}, status: :forbidden unless request.remote_ip.start_with?("172.", "10.") || request.remote_ip == "127.0.0.1" || request.remote_ip == "::1"
+    before_action :check_internal_ip, only: [:update, :show, :basic, :review]
+    before_action :load_contract, only: [:show, :basic, :review]
 
+    def update
       bpm_id = params[:id]
       file = contract_params[:file]
       filename = contract_params[:filename]
@@ -48,19 +49,31 @@ module API
       render json: {is_success: false, error_message: "服务器内部错误"}, status: :internal_server_error
     end
 
-    def show
-      return render json: {is_success: false, error_message: "此 API 仅允许内网调用。"}, status: :forbidden unless request.remote_ip.start_with?("172.", "10.") || request.remote_ip == "127.0.0.1" || request.remote_ip == "::1"
-
-      bpm_id = params[:id]
-      @contract_basic = ContractBasic.find_by(bpm_id: bpm_id)
-
-      if @contract_basic.blank?
-        return render json: {is_success: false, error_message: "bpm_id 不能为空"}, status: :bad_request
-      end
-      @contract_review = @contract_basic.contract_review
+    def contract_details
+      render action_name
     end
+    alias show contract_details
+    alias basic contract_details
+    alias review contract_details
 
     private
+
+    def check_internal_ip
+      return if valid_ip?
+      render json: { is_success: false, error_message: "此 API 仅允许内网调用。" }, status: :forbidden
+    end
+
+    def load_contract
+      @contract_basic = ContractBasic.find_by(bpm_id: params[:id])
+      @contract_review = @contract_basic.contract_review
+      return if @contract_basic.present?
+      render json: { is_success: false, error_message: "bpm_id 不能为空" }, status: :bad_request
+    end
+
+    def valid_ip?
+      ip = request.remote_ip
+      ip.start_with?("172.", "10.") || ip.in?(["127.0.0.1", "::1"])
+    end
 
     def contract_params
       params.permit(:id, :file, :filename)
