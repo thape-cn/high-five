@@ -19,7 +19,8 @@ module Admin
       if response.status == 201
         upload_file_id = response.body[:id]
         upload_filename = response.body[:name]
-        contract_basic = ContractBasic.create(upload_file_id:, upload_filename:)
+        bpm_id = "bpm_id_#{upload_file_id}"
+        contract_basic = ContractBasic.create(bpm_id:, upload_file_id:, upload_filename:)
         contract_basic.create_contract_review
         authorize contract_basic
       end

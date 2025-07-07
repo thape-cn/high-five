@@ -24,12 +24,14 @@ module API
         upload_file_id = response.body[:id]
         upload_filename = filename.presence || response.body[:name]
 
-        contract_basic = ContractBasic.create(
-          bpm_id: bpm_id,
-          upload_file_id: upload_file_id,
-          upload_filename: upload_filename
-        )
-        contract_basic.create_contract_review
+        contract_basic = ContractBasic.find_or_create_by(bpm_id: bpm_id) do |cb|
+          cb.upload_file_id = upload_file_id
+          cb.upload_filename = upload_filename
+        end
+        contract_basic.upload_file_id = upload_file_id
+        contract_basic.upload_filename = upload_filename
+        contract_basic.save
+        contract_basic.create_contract_review # always create new contract_review after file changed
 
         render json: {
           is_success: true,
