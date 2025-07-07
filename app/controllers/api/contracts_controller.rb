@@ -21,9 +21,23 @@ module API
       contract_basic.contract_files.destroy_all
       files_info.each do |file_url|
         contract_file = contract_basic.contract_files.create(file_id: file_url["ID"], attachment_address: file_url["ATTACHMENTADDRESS"], enclosure_name: file_url["ENCLOSURENAME"])
-        file_content = Faraday.get(file_url["ATTACHMENTADDRESS"])
+        # Download the remote file to a temporary location so that we can
+        # provide an IO-like object to `upload_document` (passing the raw
+        # Faraday::Response previously caused a type error).
+        remote_response = Faraday.get(file_url["ATTACHMENTADDRESS"])
+        basename = File.basename(file_url["ENCLOSURENAME"].to_s, ".*")
+        extension = File.extname(file_url["ENCLOSURENAME"].to_s)
+        tempfile = Tempfile.new([basename.presence || "contract_file", extension])
+        tempfile.binmode
+        tempfile.write(remote_response.body)
+        tempfile.rewind
+
         dify_chat = initialize_dify_chat
-        response = dify_chat.provider.upload_document(file_content)
+        response = dify_chat.provider.upload_document(tempfile)
+
+        # Ensure the tempfile is removed after the upload attempt
+        tempfile.close!
+
         if response.status == 201
           upload_file_id = response.body[:id]
           upload_filename = response.body[:name]
