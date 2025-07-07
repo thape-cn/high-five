@@ -10,7 +10,7 @@ class AI::ContractBasicFillingJob
     field_dify_key = Rails.application.credentials.dify_basic_keys[field_name.to_sym]
     dify_chat = initialize_dify_chat(field_dify_key)
 
-    response = dify_chat.ask "合同数据录入", with: contract_basic.upload_file_id do |chunk|
+    response = dify_chat.ask "合同数据录入", with: contract_basic.contract_files.collect(&:upload_file_id) do |chunk|
       ActionCable.server.broadcast "llm_channel", {id: dom_id(contract_basic, field_name), content: chunk.content}
     end
     think, value = split_think_value(response.content)
@@ -19,8 +19,6 @@ class AI::ContractBasicFillingJob
         id: dom_id(contract_basic, field_name),
         data: {"coreui-container": "body", "coreui-toggle": "popover", "coreui-placement": "top", "coreui-content": think},
         class: "think_value")}
-    Rails.logger.info "log in ContractBasicFillingJob #{field_name} with #{contract_basic.upload_file_id}: #{response.content}"
-
     contract_basic.update_attribute(field_name, response.content)
   rescue ActiveRecord::RecordNotFound => e
     Rails.logger.error "ContractBasic not found with id: #{contract_basic_id}"

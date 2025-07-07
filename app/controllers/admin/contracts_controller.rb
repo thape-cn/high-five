@@ -17,17 +17,18 @@ module Admin
       dify_chat = initialize_dify_chat
       response = dify_chat.provider.upload_document(file)
       if response.status == 201
+        bpm_id = "bpm_id_#{upload_file_id}"
         upload_file_id = response.body[:id]
         upload_filename = response.body[:name]
-        bpm_id = "bpm_id_#{upload_file_id}"
-        contract_basic = ContractBasic.create(bpm_id:, upload_file_id:, upload_filename:)
+        contract_basic = ContractBasic.create(bpm_id:)
+        contract_basic.contract_files.create(upload_file_id:, upload_filename:)
         contract_basic.create_contract_review
         authorize contract_basic
       end
     end
 
     def show
-      @contract_basic = authorize ContractBasic.find_by(upload_file_id: params[:id])
+      @contract_basic = authorize ContractBasic.find_by(bpm_id: params[:id])
     end
 
     def invoke_ai
