@@ -20,7 +20,15 @@ module API
       contract_basic = ContractBasic.find_or_create_by(bpm_id: bpm_id)
       contract_basic.contract_files.destroy_all
       files_info.each do |file_url|
-        contract_basic.contract_files.create(file_id: file_url["ID"], attachment_address: file_url["ATTACHMENTADDRESS"], enclosure_name: file_url["ENCLOSURENAME"])
+        contract_file = contract_basic.contract_files.create(file_id: file_url["ID"], attachment_address: file_url["ATTACHMENTADDRESS"], enclosure_name: file_url["ENCLOSURENAME"])
+        file_content = HTTParty.get(file_url["ATTACHMENTADDRESS"])
+        dify_chat = initialize_dify_chat
+        response = dify_chat.provider.upload_document(file_content)
+        if response.status == 201
+          upload_file_id = response.body[:id]
+          upload_filename = response.body[:name]
+          contract_file.update(upload_file_id:, upload_filename:)
+        end
       end
       contract_basic.create_contract_review # always create new contract_review after file changed
       render json: {
