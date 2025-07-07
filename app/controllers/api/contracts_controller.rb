@@ -17,7 +17,6 @@ module API
         return render json: {is_success: false, error_message: "files_info 不能为空"}, status: :bad_request
       end
       files_info.each do |file_url|
-
       end
     rescue => e
       Rails.logger.error "API contract creation error: #{e.message}"
@@ -27,22 +26,22 @@ module API
     def contract_details
       render action_name
     end
-    alias show contract_details
-    alias basic contract_details
-    alias review contract_details
+    alias_method :show, :contract_details
+    alias_method :basic, :contract_details
+    alias_method :review, :contract_details
 
     private
 
     def check_internal_ip
       return if valid_ip?
-      render json: { is_success: false, error_message: "此 API 仅允许内网调用。" }, status: :forbidden
+      render json: {is_success: false, error_message: "此 API 仅允许内网调用。"}, status: :forbidden
     end
 
     def load_contract
       @contract_basic = ContractBasic.find_by(bpm_id: params[:id])
       @contract_review = @contract_basic.contract_review
       return if @contract_basic.present?
-      render json: { is_success: false, error_message: "bpm_id 不能为空" }, status: :bad_request
+      render json: {is_success: false, error_message: "bpm_id 不能为空"}, status: :bad_request
     end
 
     def valid_ip?
