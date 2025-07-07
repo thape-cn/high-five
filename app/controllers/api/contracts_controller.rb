@@ -3,7 +3,7 @@ module API
     include DifyChatInitializable
 
     def update
-      return render json: {is_success: false, error_message: "此 API 仅允许内网调用。"}, status: :forbidden unless request.remote_ip.start_with?("172.", "10.") || request.remote_ip == "127.0.0.1"
+      return render json: {is_success: false, error_message: "此 API 仅允许内网调用。"}, status: :forbidden unless request.remote_ip.start_with?("172.", "10.") || request.remote_ip == "127.0.0.1" || request.remote_ip == "::1"
 
       bpm_id = params[:id]
       file = contract_params[:file]
@@ -46,6 +46,17 @@ module API
     rescue => e
       Rails.logger.error "API contract creation error: #{e.message}"
       render json: {is_success: false, error_message: "服务器内部错误"}, status: :internal_server_error
+    end
+
+    def show
+      return render json: {is_success: false, error_message: "此 API 仅允许内网调用。"}, status: :forbidden unless request.remote_ip.start_with?("172.", "10.") || request.remote_ip == "127.0.0.1" || request.remote_ip == "::1"
+
+      bpm_id = params[:id]
+      contract_basic = ContractBasic.find_by(bpm_id: bpm_id)
+
+      if contract_basic.blank?
+        return render json: {is_success: false, error_message: "bpm_id 不能为空"}, status: :bad_request
+      end
     end
 
     private
