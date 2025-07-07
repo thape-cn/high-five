@@ -13,10 +13,22 @@ json.contract_basic do
   json.contract_nature_think think
   json.contract_nature value
 
-  json.east_boundary @contract_basic.east_boundary
-  json.south_boundary @contract_basic.south_boundary
-  json.west_boundary @contract_basic.west_boundary
-  json.north_boundary @contract_basic.north_boundary
+  think, value = API::ContractsController.helpers.split_think_value(@contract_basic.east_boundary)
+  json.east_boundary_think think
+  json.east_boundary value
+
+  think, value = API::ContractsController.helpers.split_think_value(@contract_basic.south_boundary)
+  json.south_boundary_think think
+  json.south_boundary value
+
+  think, value = API::ContractsController.helpers.split_think_value(@contract_basic.west_boundary)
+  json.west_boundary_think think
+  json.west_boundary value
+
+  think, value = API::ContractsController.helpers.split_think_value(@contract_basic.north_boundary)
+  json.north_boundary_think think
+  json.north_boundary value
+
   json.contract_name @contract_basic.contract_name
   json.project_land_use_nature @contract_basic.project_land_use_nature
   json.currency @contract_basic.currency
