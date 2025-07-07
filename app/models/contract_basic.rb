@@ -1,5 +1,6 @@
 class ContractBasic < ApplicationRecord
   has_one :contract_review, dependent: :destroy
+  validates :bpm_id, presence: true, uniqueness: true
 
   NEED_COMPLETE_BASIC_FIELDS = [
     :contract_type,
