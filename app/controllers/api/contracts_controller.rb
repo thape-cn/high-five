@@ -1,5 +1,5 @@
 module API
-  class ContractsController < ActionController::API
+  class ContractsController < ActionController::Base
     include DifyChatInitializable
 
     def update
@@ -10,7 +10,7 @@ module API
       filename = contract_params[:filename]
 
       if bpm_id.blank?
-        return render json: {is_success: false, error_message: "ID不能为空"}, status: :bad_request
+        return render json: {is_success: false, error_message: "ID 不能为空"}, status: :bad_request
       end
 
       if file.blank?
@@ -52,11 +52,12 @@ module API
       return render json: {is_success: false, error_message: "此 API 仅允许内网调用。"}, status: :forbidden unless request.remote_ip.start_with?("172.", "10.") || request.remote_ip == "127.0.0.1" || request.remote_ip == "::1"
 
       bpm_id = params[:id]
-      contract_basic = ContractBasic.find_by(bpm_id: bpm_id)
+      @contract_basic = ContractBasic.find_by(bpm_id: bpm_id)
 
-      if contract_basic.blank?
+      if @contract_basic.blank?
         return render json: {is_success: false, error_message: "bpm_id 不能为空"}, status: :bad_request
       end
+      @contract_review = @contract_basic.contract_review
     end
 
     private
