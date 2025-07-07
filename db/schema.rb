@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_07_075751) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_07_082148) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -55,11 +55,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_07_075751) do
   end
 
   create_table "contract_files", force: :cascade do |t|
-    t.string "upload_file_id"
-    t.string "upload_filename"
+    t.string "upload_file_id", comment: "Dify 上传完毕后拿到的文件 ID"
+    t.string "upload_filename", comment: "Dify 上传的文件名"
     t.bigint "contract_basic_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file_id", comment: "来自BPM的File ID"
+    t.string "attachment_address", comment: "来自BPM的附件地址"
+    t.string "enclosure_name", comment: "来自BPM的文件名"
     t.index ["contract_basic_id"], name: "index_contract_files_on_contract_basic_id"
   end
 

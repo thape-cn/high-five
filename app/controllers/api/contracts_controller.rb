@@ -16,10 +16,19 @@ module API
       if files_info.blank?
         return render json: {is_success: false, error_message: "files_info 不能为空"}, status: :bad_request
       end
+      contract_basic = ContractBasic.find_or_create_by(bpm_id: bpm_id)
+      contract_basic.contract_files.destroy_all
       files_info.each do |file_url|
+        contract_basic.contract_files.create(file_id: file_url["ID"], attachment_address: file_url["ATTACHMENTADDRESS"], enclosure_name: file_url["ENCLOSURENAME"])
       end
+      contract_basic.create_contract_review # always create new contract_review after file changed
+      render json: {
+        is_success: true,
+        bpm_id: contract_basic.bpm_id,
+        contract_id: contract_basic.id
+      }, status: :created
     rescue => e
-      Rails.logger.error "API contract creation error: #{e.message}"
+      Rails.logger.error "API contract create/update error: #{e.message}"
       render json: {is_success: false, error_message: "服务器内部错误"}, status: :internal_server_error
     end
 
