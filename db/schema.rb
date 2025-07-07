@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_07_015633) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_07_075505) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -54,6 +54,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_07_015633) do
     t.datetime "updated_at", null: false
     t.string "bpm_id"
     t.index ["bpm_id"], name: "index_contract_basics_on_bpm_id", unique: true
+  end
+
+  create_table "contract_files", force: :cascade do |t|
+    t.string "upload_file_id"
+    t.string "upload_filename"
+    t.bigint "contract_basic_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contract_basic_id"], name: "index_contract_files_on_contract_basic_id"
   end
 
   create_table "contract_reviews", force: :cascade do |t|
@@ -169,6 +178,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_07_015633) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contract_files", "contract_basics"
   add_foreign_key "contract_reviews", "contract_basics"
   add_foreign_key "user_bad_events", "bad_events"
   add_foreign_key "user_bad_events", "users"

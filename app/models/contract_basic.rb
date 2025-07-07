@@ -1,4 +1,5 @@
 class ContractBasic < ApplicationRecord
+  has_many :contract_files, dependent: :destroy
   has_one :contract_review, dependent: :destroy
   validates :bpm_id, presence: true, uniqueness: true
 
