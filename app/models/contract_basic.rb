@@ -35,4 +35,8 @@ class ContractBasic < ApplicationRecord
   def complete_field_count
     NEED_COMPLETE_BASIC_FIELDS.count { |field| self[field].present? }
   end
+
+  def support_files
+    contract_files.select { |file| file.upload_file_id.present? && file.upload_filename.end_with?(".docx") }
+  end
 end
