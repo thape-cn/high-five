@@ -27,8 +27,7 @@ module API
         # provide an IO-like object to `upload_document` (passing the raw
         # Faraday::Response previously caused a type error).
         remote_response = Faraday.get(attachment_url)
-        basename = File.basename(file_url["ENCLOSURENAME"].to_s, ".*")
-        tempfile = Tempfile.new([basename.presence || "contract_file", file_extension])
+        tempfile = Tempfile.new([file_url["ENCLOSURENAME"].to_s, file_extension])
         tempfile.binmode
         tempfile.write(remote_response.body)
         tempfile.rewind
