@@ -2,6 +2,7 @@
 en:
   contracts:
     new: "Upload new contract"
+    bpm_id: "BPM ID"
     upload_file_id: "Upload file ID"
     upload_filename: "Upload filename"
     complete_field_count: "Complete field count"

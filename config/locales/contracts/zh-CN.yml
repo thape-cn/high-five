@@ -2,6 +2,7 @@
 zh-CN:
   contracts:
     new: "上传新合同"
+    bpm_id: "BPM ID"
     upload_file_id: "上传文件 ID"
     upload_filename: "上传文件名"
     complete_field_count: "合同解析字段数量"

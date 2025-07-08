@@ -39,9 +39,8 @@
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
-            <th><%= t('contracts.upload_filename') -%></th>
-            <th><%= t('contracts.contract_type') -%></th>
-            <th><%= t('contracts.contract_nature') -%></th>
+            <th><%= t('contracts.bpm_id') -%> - <%= t('contracts.upload_filename') -%></th>
+            <th><%= t('contracts.contract_type') -%> - <%= t('contracts.contract_nature') -%></th>
             <th><%= t('contracts.contract_name') -%></th>
             <th><%= t('contracts.party_a') -%></th>
             <th><%= t('contracts.complete_field_count') -%></th>
@@ -53,8 +52,10 @@
           <% @contracts.each do |contract| %>
             <tr>
               <td>
-                <% contract.contract_files.each do |contract_file| %>
-                  <%= link_to contract_file.upload_filename, contract_file.attachment_address -%>
+                <%= link_to contract.bpm_id, admin_contract_path(id: contract.bpm_id) %>
+                <br />
+                <% contract.contract_files.each_with_index do |contract_file, index| %>
+                  <%= index + 1 -%>: <%= link_to contract_file.upload_filename, contract_file.attachment_address -%>
                   <br />
                 <% end %>
               </td>
@@ -66,8 +67,7 @@
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :contract_type, category: :basic), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
                 <% end %>
-              </td>
-              <td>
+                <br />
                 <% think, value = split_think_value(contract.contract_nature) %>
                 <span id="<%= dom_id(contract, :contract_nature) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
                   <%= value -%>
