@@ -33,14 +33,14 @@ module API
         tempfile.rewind
 
         dify_chat = initialize_dify_chat
-        response = dify_chat.provider.upload_document(tempfile)
+        upload_filename = "#{file_url["ENCLOSURENAME"]}.#{file_extension}"
+        response = dify_chat.provider.upload_document(tempfile, upload_filename)
 
         # Ensure the tempfile is removed after the upload attempt
         tempfile.close!
 
         if response.status == 201
           upload_file_id = response.body[:id]
-          upload_filename = "#{file_url["ENCLOSURENAME"]}.#{file_extension}"
           contract_file.update(upload_file_id:, upload_filename:)
         end
       end
