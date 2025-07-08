@@ -10,7 +10,7 @@ class AI::ContractBasicFillingJob
     field_dify_key = Rails.application.credentials.dify_basic_keys[field_name.to_sym]
     dify_chat = initialize_dify_chat(field_dify_key)
 
-    support_files = contract_review.contract_basic.contract_files.select { |file| file.upload_file_id.present? && file.upload_filename.end_with?('.docx') }
+    support_files = contract_basic.contract_files.select { |file| file.upload_file_id.present? && file.upload_filename.end_with?('.docx') }
     response = dify_chat.ask "合同数据录入", with: support_files.collect(&:upload_file_id) do |chunk|
       ActionCable.server.broadcast "llm_channel", {id: dom_id(contract_basic, field_name), content: chunk.content}
     end
