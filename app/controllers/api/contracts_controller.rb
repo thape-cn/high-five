@@ -46,6 +46,7 @@ module API
         end
       end
       contract_basic.create_contract_review # always create new contract_review after file changed
+      contract_basic.touch
       render json: {
         is_success: true,
         bpm_id: contract_basic.bpm_id,
