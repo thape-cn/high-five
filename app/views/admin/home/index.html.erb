@@ -53,7 +53,11 @@
         <tbody>
           <% @contracts.each do |contract| %>
             <tr>
-              <td><%= link_to contract.contract_files.collect(&:upload_filename), admin_contract_path(id: contract.bpm_id) -%></td>
+              <td>
+                <% contract.contract_files.each do |contract_file| %>
+                  <%= link_to contract_file.upload_filename, contract_file.attachment_address -%>
+                <% end %>
+              </td>
               <td>
                 <% think, value = split_think_value(contract.contract_type) %>
                 <span id="<%= dom_id(contract, :contract_type) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
@@ -103,7 +107,7 @@
                 <%= contract.complete_field_count -%> / <%= ContractBasic::NEED_COMPLETE_BASIC_FIELDS.count -%>
               </td>
               <td>
-                <%= contract.contract_review&.complete_field_count -%> / <%= ContractReview::NEED_COMPLETE_REVIEW_FIELDS.count -%>
+                <%= contract.contract_review&.complete_field_count -%> / <%= link_to ContractReview::NEED_COMPLETE_REVIEW_FIELDS.count, admin_contract_path(id: contract.bpm_id) -%>
               </td>
               <td>
                 <%= link_to confirm_batch_ai_filling_basic_admin_contract_path(id: contract.id), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
