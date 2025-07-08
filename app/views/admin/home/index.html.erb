@@ -44,7 +44,6 @@
             <th><%= t('contracts.contract_nature') -%></th>
             <th><%= t('contracts.contract_name') -%></th>
             <th><%= t('contracts.party_a') -%></th>
-            <th><%= t('contracts.party_b') -%></th>
             <th><%= t('contracts.complete_field_count') -%></th>
             <th><%= t('contract_reviews.complete_field_count') -%></th>
             <th><%= t('form.action') -%></th>
@@ -92,15 +91,6 @@
                   <%= value -%>
                 </span>
                 <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :party_a, category: :basic), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
-                  <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
-                <% end %>
-              </td>
-              <td>
-                <% think, value = split_think_value(contract.party_b) %>
-                <span id="<%= dom_id(contract, :party_b) -%>" class="think_value" data-coreui-container="body" data-coreui-toggle="popover" data-coreui-placement="top" data-coreui-content="<%= think -%>">
-                  <%= value -%>
-                </span>
-                <%= link_to invoke_ai_admin_contract_path(id: contract.id, field_name: :party_b, category: :basic), data: {controller: "modal", action: "modal#click", 'modal-page-reload-value': true} do -%>
                   <%= svg_icon('free.svg#cil-asterisk-circle', %w[icon]) -%>
                 <% end %>
               </td>
