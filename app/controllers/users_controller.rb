@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!
-
   def show
     @user = User.find_by!(email: "#{params[:id]}@thape.com.cn")
     set_meta_tags title: t(".title", name: @user.chinese_name)
