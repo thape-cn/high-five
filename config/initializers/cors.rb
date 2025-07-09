@@ -1,6 +1,6 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "staging-bpm.thape.com.cn:1000", "bpm.thape.com.cn:1000", "bpmmobiletest.thape.com.cn", "bpmmobile.thape.com.cn"
+    origins "staging-bpm.thape.com.cn:1000", "bpm.thape.com.cn:1000", "bpmmobiletest.thape.com.cn", "bpmmobile.thape.com.cn", "172.26.11.49:3000", "172.26.11.49:3001"
 
     resource "/api/*",
       headers: :any,
