@@ -1,4 +1,4 @@
-json.is_success true
+json.is_success (@contract_basic.contract_review&.complete_field_count == ContractReview::NEED_COMPLETE_REVIEW_FIELDS.count)
 json.error_message nil
 json.contract_id @contract_basic.id
 json.bpm_id @contract_basic.bpm_id
