@@ -45,10 +45,14 @@ module Admin
     end
 
     def batch_ai_filling_basic
-      ContractBasic::NEED_COMPLETE_BASIC_FIELDS.each do |field_name|
-        next if @contract_basic[field_name].present?
+      batch = Sidekiq::Batch.new
+      batch.description = "Batch filling contract basic id: #{@contract_basic.id}"
+      batch.jobs do
+        ContractBasic::NEED_COMPLETE_BASIC_FIELDS.each do |field_name|
+          next if @contract_basic[field_name].present?
 
-        AI::ContractBasicFillingJob.perform_async(@contract_basic.id, field_name.to_s)
+          AI::ContractBasicFillingJob.perform_async(@contract_basic.id, field_name.to_s)
+        end
       end
     end
 
@@ -58,10 +62,14 @@ module Admin
 
     def batch_ai_filling_review
       contract_review = @contract_basic.contract_review
-      ContractReview::NEED_COMPLETE_REVIEW_FIELDS.each do |field_name|
-        next if contract_review[field_name].present?
+      batch = Sidekiq::Batch.new
+      batch.description = "Batch filling contract review id: #{contract_review.id}"
+      batch.jobs do
+        ContractReview::NEED_COMPLETE_REVIEW_FIELDS.each do |field_name|
+          next if contract_review[field_name].present?
 
-        AI::ContractReviewFillingJob.perform_async(contract_review.id, field_name.to_s)
+          AI::ContractReviewFillingJob.perform_async(contract_review.id, field_name.to_s)
+        end
       end
     end
 
