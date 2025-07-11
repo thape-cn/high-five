@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_07_082148) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_11_094632) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -84,6 +84,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_07_082148) do
     t.string "liability_clause_keywords", comment: "责任条款字眼:乙方应承担甲方的一切损失,乙方应承担甲方利润,乙方应承担甲方的工程,乙方应承担甲方的间接损失,乙方应承担甲方的维权费用,以上都不包含"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "review_summary"
     t.index ["contract_basic_id"], name: "index_contract_reviews_on_contract_basic_id"
   end
 
