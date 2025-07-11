@@ -46,7 +46,8 @@ gem "config"
 gem "ajax-datatables-rails"
 gem "pagy"
 
-gem "sidekiq"
+gem "sidekiq", "~> 7.3"
+gem "sidekiq-batch"
 gem "rack-cors"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
