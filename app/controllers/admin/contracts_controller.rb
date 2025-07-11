@@ -64,6 +64,8 @@ module Admin
       contract_review = @contract_basic.contract_review
       batch = Sidekiq::Batch.new
       batch.description = "Batch filling contract review id: #{contract_review.id}"
+      # this will call "ContractReviewSummary.new.on_success"
+      batch.on(:success, ContractReviewSummary, "contract_review_id" => contract_review.id)
       batch.jobs do
         ContractReview::NEED_COMPLETE_REVIEW_FIELDS.each do |field_name|
           next if contract_review[field_name].present?
@@ -71,8 +73,6 @@ module Admin
           AI::ContractReviewFillingJob.perform_async(contract_review.id, field_name.to_s)
         end
       end
-      # this will call "ContractReviewSummary.new.on_success"
-      batch.on(:success, ContractReviewSummary, "contract_review_id" => contract_review.id)
     end
 
     def confirm_destroy
