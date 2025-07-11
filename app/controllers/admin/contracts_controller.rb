@@ -72,7 +72,7 @@ module Admin
         end
       end
       # this will call "ContractReviewSummary.new.on_success"
-      batch.on(:success, ContractReviewSummary, 'contract_review_id' => contract_review.id)
+      batch.on(:success, ContractReviewSummary, "contract_review_id" => contract_review.id)
     end
 
     def confirm_destroy
